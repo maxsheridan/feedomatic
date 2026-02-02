@@ -1,0 +1,332 @@
+@font-face {
+    font-family: 'Lora';
+    src: url(../type/lora_variable.woff2) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist';
+    src: url(../type//geist_variable.woff2) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Geist Mono';
+    src: url(../type//geistmono_variable.woff2) format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --ratio: 1.6;
+    --space--2: calc(var(--space--1) / var(--ratio));
+    --space--1: calc(var(--space-0) / var(--ratio));
+    --space-0: calc(1rem + .5vw); 
+    --space-1: calc(var(--space-0) * var(--ratio));
+    --space-2: calc(var(--space-1) * var(--ratio));
+    --space-3: calc(var(--space-2) * var(--ratio));
+    --body: 'Geist';
+    --heading: 'Lora';
+    --mono: 'Geist Mono';
+    --paragraph: calc(1rem + .25vw);
+    --label:  calc(var(--paragraph) * .75);
+    --primary: #1A1A1A;
+    --accent: #0C5551;
+    --border: #D0D0D0;
+    --background: #EAE8E8;
+    --surface-background: #F5F5F5;
+    --error: red;
+    --button-active: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary: #E0E0E0;
+        --accent: #FFCBDB;
+        --border: #505050;
+        --background: #1A1A1A;
+        --surface-background: #2A2A2A;
+        --error: #D47878;
+        --button-active: #7979E4;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    background: none;
+    overscroll-behavior: none;
+}
+
+html {
+    font-size: 16px;
+    text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: #fff0;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--body);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    line-height: 1.6;
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+main > * + * {
+    margin-block-start: var(--space-1);
+}
+
+h1 {
+    font-family: var(--heading);
+    font-size: calc(var(--paragraph) * 2);
+    font-weight: 600;
+    line-height: 1;
+}
+
+h2 {
+    font-family: var(--heading);
+    font-size: calc(var(--paragraph) * 1.5);
+    font-weight: 600;
+}
+
+.mono {
+    font-family: var(--mono);
+}
+
+a {
+    color: var(--accent);
+}
+
+@media (hover:hover) and (pointer:fine) {
+    a:hover {
+    opacity: .6;
+    }
+}
+
+hr {
+    border-top: 1px solid var(--border);
+}
+
+.setup-section {
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    background-color: var(--surface-background);
+}
+
+.setup-section > * + * {
+    margin-block-start: var(--space-0);
+}
+
+.setup-section > div *:not(p.after-field) + *:not(p.after-field) {
+    margin-block-start: var(--space--2);
+}
+
+p.after-field {
+    margin-block-start: var(--space--1);
+}
+
+.setup-section.hidden {
+    display: none;
+}
+
+.setup-section label {
+    display: block;
+    font-size: var(--label);
+    font-weight: 500;
+}
+
+.setup-section input[type="text"],
+.setup-section input[type="password"] {
+    width: 100%;
+    padding: .5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    font-size: var(--label);
+    color: var(--primary);
+    background-color: var(--background);
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-color: var(--accent);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Geist';
+    font-size: 0.875rem;
+    color: var(--primary);
+    background-color: var(--surface-background);
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+button.active {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+button:hover {
+    border: 1px solid var(--accent);
+    transition: border 0.3s, color 0.3s;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.feeds-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feed-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.feed-button .remove {
+    margin-left: .25rem;
+    color: var(--error);
+    font-weight: bold;
+}
+
+.item {
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    overflow: hidden;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--surface-background);
+    cursor: pointer;
+}
+
+.item-header:hover {
+    background-color: var(--surface-background);
+}
+
+.item-header:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
+.item-title {
+    flex: 1;
+    font-weight: 500;
+}
+
+.item-meta {
+    font-size: 12px;
+    color: var(--accent);
+    margin-right: .75rem;
+}
+
+.item-content {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid var(--border);
+}
+
+.item-content.expanded {
+    display: block;
+}
+
+.item-description {
+    color: var(--accent);
+}
+
+.item-actions {
+    display: flex;
+    gap: .75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.item-actions button {
+    font-size: 13px;
+    padding: 8px 16px;
+}
+
+.item-actions a {
+    padding: .5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: .25rem;
+    text-decoration: none;
+    font-size: var(--label);
+    color: var(--accent);
+    background-color: var(--surface-background);
+}
+
+.item-actions a:hover {
+    background-color: var(--surface-background);
+}
+
+.item-actions a:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.empty-state {
+    font-size: var(--label);
+    color: var(--accent);
+}
+
+.last-updated {
+    font-size: 12px;
+    color: var(--accent);
+}
+
+.loading {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.error {
+    color: var(--error);
+    font-size: var(--label);
+}
+
+.status {
+    font-size: var(--label);
+}

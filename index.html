@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Feedomatic</title>
+</head>
+<body>
+    <main>
+        <h1>Feedomatic</h1>
+        <div class="setup-section" id="setupSection">
+            <div>
+                <h3>Initial Setup Required</h3>
+                <p>
+                    To add feeds via the UI, add your GitHub details here (stored in browser only):
+                </p>
+            </div>
+            <div>
+                <label>GitHub Username:</label>
+                <input type="text" id="githubUser" placeholder="your-username">
+            </div>
+            <div>
+                <label>Repository Name:</label>
+                <input type="text" id="githubRepo" placeholder="repo-name">
+            </div>
+            <div>
+                <label>Personal Access Token:</label>
+                <input type="password" id="githubToken" placeholder="ghp_xxxxxxxxxxxxx">
+                <p class="after-field">
+                    Create a token at <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> with <code class="mono">repo</code> scope.
+                </p>
+            </div>
+            <button onclick="saveGitHubConfig()">Save Configuration</button>
+        </div>
+        <div class="add-feed-section">
+            <div class="input-group">
+                <input type="text" id="feedUrl" placeholder="Enter RSS feed URL">
+                <button onclick="addFeed()">Add Feed</button>
+            </div>
+            <div class="status" id="feedStatus"></div>
+        </div>
+        <hr>
+        <div class="feeds-section">
+            <div class="feeds-header">
+                <h2 class="section-title">Feeds</h2>
+                <button onclick="location.reload()">Refresh</button>
+            </div>
+            <div class="feed-list" id="feedList"></div>
+            <div class="last-updated" id="lastUpdated"></div>
+        </div>
+        <hr>
+        <div class="view-section">
+            <h2 class="section-title">New</h2>
+            <div id="newItems"></div>
+        </div>
+        <hr>
+        <div class="view-section">
+            <h2 class="section-title">Archive</h2>
+            <div id="archiveItems"></div>
+        </div>
+    </main>
+    <script src="assets/js/reader.js"></script>
+</body>
+</html>
