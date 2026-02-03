@@ -40,7 +40,8 @@
     --border: #D0D0D0;
     --background: #EAE8E8;
     --surface-background: #F5F5F5;
-    --error: red;
+    --error: #AF1919;
+    --error-reverse: #EF8787; 
     --button-active: blue;
 }
 
@@ -51,7 +52,8 @@
         --border: #505050;
         --background: #1A1A1A;
         --surface-background: #2A2A2A;
-        --error: #D47878;
+        --error: #EF8787;
+        --error-reverse: #AF1919; 
         --button-active: #7979E4;
     }
 }
@@ -209,11 +211,14 @@ button:disabled {
     cursor: not-allowed;
 }
 
+.section-title {
+    margin-block-end: var(--space-0);
+}
+
 .feeds-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-block-end: var(--space-0);
 }
 
 .feed-list {
@@ -227,6 +232,11 @@ button:disabled {
     color: var(--error);
     font-weight: bold;
 }
+
+.feed-button.active .remove {
+    color: var(--error-reverse);
+}
+
 
 .item {
     border: 1px solid var(--border);
