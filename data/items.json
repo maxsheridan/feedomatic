@@ -1,1 +1,82 @@
-[]
+[
+  {
+    "id": "https://mijailovic.net/2025/09/07/dotnet/2025-09-07T09:30:00+00:00How to (actually) become an expert in .NET",
+    "title": "How to (actually) become an expert in .NET",
+    "link": "https://mijailovic.net/2025/09/07/dotnet/",
+    "description": "The influencers want you to think that you must learn a gazillion different technologies to become a successful .NET developer. These days, the internet is full of .NET “roadmaps” that include everything but the kitchen sink: Azure, AWS, Redis, Docker, Postgres, GraphQL, gRPC, Dapper, ELK stack, CQRS, you name it.",
+    "pubDate": "2025-09-07T09:30:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2025/06/01/bandcamp-scams/2025-06-01T15:50:00+00:00How scammers trick fans on Bandcamp—and how to protect yourself",
+    "title": "How scammers trick fans on Bandcamp—and how to protect yourself",
+    "link": "https://mijailovic.net/2025/06/01/bandcamp-scams/",
+    "description": "It’s Friday, and Invincible Shield, the long-awaited Judas Priest album, is finally out. To your surprise, it’s available on Bandcamp! You buy the album immediately, ecstatic that your favorite band has finally started releasing their music on your favorite music platform. You wake up the next day, only to find the album has vanished from your collection—you’ve fallen victim to a scam.",
+    "pubDate": "2025-06-01T15:50:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2025/05/14/high-performance-strings/2025-05-14T12:00:00+00:00High-performance string formatting in .NET",
+    "title": "High-performance string formatting in .NET",
+    "link": "https://mijailovic.net/2025/05/14/high-performance-strings/",
+    "description": "One of the topics I covered in my previous post on memory optimizations was string formatting. As I was writing that post, I uncovered an embarrassing gap in my knowledge!",
+    "pubDate": "2025-05-14T12:00:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2025/04/10/memory-optimizations/2025-04-10T08:00:00+00:00Optimizing memory usage with modern .NET features",
+    "title": "Optimizing memory usage with modern .NET features",
+    "link": "https://mijailovic.net/2025/04/10/memory-optimizations/",
+    "description": "After my service migrated from .NET Framework to .NET 8 (and later to .NET 9), it felt like a whole new world had opened to me. All the modern .NET features that I had only been reading about on the .NET Blog were finally available to me. Armed with Microsoft’s continuous, fleet-wide performance profiler, I embarked on a journey to find the places where my service was allocating the most memory and fix the unnecessary allocations by using the newly available .NET APIs. In this blog post, I’ll sh",
+    "pubDate": "2025-04-10T08:00:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2024/04/04/bandcamp-auth/2024-04-04T12:15:00+00:00Reverse engineering Bandcamp authentication protocol",
+    "title": "Reverse engineering Bandcamp authentication protocol",
+    "link": "https://mijailovic.net/2024/04/04/bandcamp-auth/",
+    "description": "Did you know that the albums you purchase on Bandcamp can disappear from your collection without notice? This can happen for various reasons. For example, a seller might decide on a whim to remove the album from the platform. Bandcamp apparently allows this in their terms of use: Content you purchase in a Transaction cannot be guaranteed to be available to you perpetually. Users bear all risk from the denial of access to any Content purchased through the Service. The only way to make sure your a",
+    "pubDate": "2024-04-04T12:15:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2023/08/16/bug-finding-chronicles/2023-08-16T18:00:00+00:00My bug finding chronicles (and how to earn money through vulnerability research)",
+    "title": "My bug finding chronicles (and how to earn money through vulnerability research)",
+    "link": "https://mijailovic.net/2023/08/16/bug-finding-chronicles/",
+    "description": "At least one person has asked me about my thought process when searching for denial-of-service vulnerabilities: how do I choose the target libraries, what specifically I look for in them, etc. “At least one person” meaning “exactly one person”, and that one person happens to be my wife, but I decided to write a whole post on this topic anyway! In this half-memoir, half-tutorial post, I’ll show you the most interesting bugs I’ve found so far and the methods I used to find them. I wouldn’t say I h",
+    "pubDate": "2023-08-16T18:00:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2023/07/23/sharpfuzz-anniversary/2023-07-23T17:00:00+00:00Five years of fuzzing .NET with SharpFuzz",
+    "title": "Five years of fuzzing .NET with SharpFuzz",
+    "link": "https://mijailovic.net/2023/07/23/sharpfuzz-anniversary/",
+    "description": "It’s been almost five years since I created SharpFuzz, the only .NET coverage-guided fuzzer. I already have a blog post on how it works, what it can do for you, and what bugs it found, so check it out if this is the first time you hear about SharpFuzz: SharpFuzz: Bringing the power of afl-fuzz to .NET platform A lot of interesting things have happened since then. SharpFuzz now works with libFuzzer, Windows, and .NET Framework. And it can finally fuzz the .NET Core base-class library! The whole f",
+    "pubDate": "2023-07-23T17:00:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2023/04/01/denial-of-service/2023-04-01T08:30:00+00:00How StackOverflowException can bring down an expensive compute cluster",
+    "title": "How StackOverflowException can bring down an expensive compute cluster",
+    "link": "https://mijailovic.net/2023/04/01/denial-of-service/",
+    "description": "In my previous post I talked about the dangers of StackOverflowException. I also promised to show you how denial of service looks like in real world. Today, I’m delivering on that promise! Let’s start by answering the fundamental question: how does a process crash lead to denial of service in the first place? Theoretical explanation Suppose you are running an HTTP web service and an attacker sends you a payload that will crash your server process. What happens next? First of all, crashing the se",
+    "pubDate": "2023-04-01T08:30:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2023/02/20/stack-overflow-exception/2023-02-20T18:20:00+00:00How safe are .NET serialization libraries against StackOverflowException",
+    "title": "How safe are .NET serialization libraries against StackOverflowException",
+    "link": "https://mijailovic.net/2023/02/20/stack-overflow-exception/",
+    "description": "I have always been fascinated by .NET’s StackOverflowException. It’s interesting because it’s fundamentally different from most other exceptions—you can’t catch it with a try/catch block. When you overflow the stack, it’s game over—the runtime will terminate your process. This behavior is especially devastating for web services that are deserializing user-controlled data. If your data structure allows recursion, malicious users can easily craft a highly nested payload and use it to DDoS your web",
+    "pubDate": "2023-02-20T18:20:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  },
+  {
+    "id": "https://mijailovic.net/2023/01/23/procrastination/2023-01-23T14:45:00+00:00Advanced lesson in procrastination",
+    "title": "Advanced lesson in procrastination",
+    "link": "https://mijailovic.net/2023/01/23/procrastination/",
+    "description": "This story started while I was preparing my blog post about piracy. The idea was to make it clear that I am all for supporting artists with my money, while arguing that in some cases using piracy might be justified. I hadn’t even completed two sentences of the post before my brain decided to sabotage me with a seemingly innocent suggestion: “Hey, you should totally calculate the value of your Bandcamp collection, I bet it would make your position stronger!” Ok, mister brain, challenge accepted, ",
+    "pubDate": "2023-01-23T14:45:00.000Z",
+    "feedUrl": "https://mijailovic.net/feed.xml"
+  }
+]
