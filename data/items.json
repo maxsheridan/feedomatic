@@ -2414,5 +2414,901 @@
     "description": "Ben Lovett is a true multi-hyphenate. A founding member of Mumford &amp; Sons, Ben sings, plays keyboards and drums, writes and produces music. He develops venues and promotes shows. He owns a record label, music publishing, is a restaurateur, activist, philanthropist and all-around interested and engaged human being.------------------• Did you enjoy this episode? Rate Spotlight On ⭐️⭐️⭐️⭐️⭐️ and leave a review on Apple Podcasts.• Subscribe! Be the first to check out each new episode of Spotligh",
     "pubDate": "2020-02-06T08:05:21.000Z",
     "feedUrl": "https://feeds.acast.com/public/shows/spot-lyte-on"
+  },
+  {
+    "id": "https://heydonworks.com/article/leveraging-the-super-keyword-in-custom-elements/",
+    "title": "Leveraging The Super Keyword In Custom Elements",
+    "link": "https://heydonworks.com/article/leveraging-the-super-keyword-in-custom-elements/",
+    "description": "Making the most of inheritance when extending custom element classes.",
+    "pubDate": "2025-12-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/dynamically-loading-custom-elements/",
+    "title": "How To Dynamically Install Custom Elements",
+    "link": "https://heydonworks.com/article/dynamically-loading-custom-elements/",
+    "description": "A reusable pattern for custom elements installation",
+    "pubDate": "2025-12-29T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/accessible-rick-rolling/",
+    "title": "Accessible Rickrolling",
+    "link": "https://heydonworks.com/article/accessible-rick-rolling/",
+    "description": "Understanding the parity principle in accessibility, using rick-rolling as an example.",
+    "pubDate": "2025-06-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/hel-variable-font/",
+    "title": "Hel: A 3-Axis, Obliterated Variable Font",
+    "link": "https://heydonworks.com/article/hel-variable-font/",
+    "description": "Hel is a distorted Swiss variable font with three axes",
+    "pubDate": "2025-06-10T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/pride-shame-and-accessibility/",
+    "title": "Pride, shame, and accessibility",
+    "link": "https://heydonworks.com/article/pride-shame-and-accessibility/",
+    "description": "The relationship between shame and motivation in web development, especially regarding accessibility.",
+    "pubDate": "2025-06-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/skune-hand-drawn-variable-font/",
+    "title": "Skune: A hand drawn variable font",
+    "link": "https://heydonworks.com/article/skune-hand-drawn-variable-font/",
+    "description": "Skune is a variable font designed to have the jagged, frenetic appeal of lo-fi garage punk",
+    "pubDate": "2025-06-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/advertising-on-this-blog/",
+    "title": "Advertising? On my blog?",
+    "link": "https://heydonworks.com/article/advertising-on-this-blog/",
+    "description": "Addressing the elephant in the room: adverts appearing on my blog",
+    "pubDate": "2025-05-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-col-element/",
+    "title": "The col element",
+    "link": "https://heydonworks.com/article/the-col-element/",
+    "description": "An unofficial guide to the HTML col element",
+    "pubDate": "2025-05-29T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-caption-element/",
+    "title": "The caption element",
+    "link": "https://heydonworks.com/article/the-caption-element/",
+    "description": "An unofficial guide to the HTML caption element",
+    "pubDate": "2025-05-20T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-code-element/",
+    "title": "The code element",
+    "link": "https://heydonworks.com/article/the-code-element/",
+    "description": "An unofficial guide to the HTML code element",
+    "pubDate": "2025-05-05T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-cite-element/",
+    "title": "The cite element",
+    "link": "https://heydonworks.com/article/the-cite-element/",
+    "description": "An unofficial guide to the HTML cite element",
+    "pubDate": "2025-04-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-canvas-element/",
+    "title": "The canvas element",
+    "link": "https://heydonworks.com/article/the-canvas-element/",
+    "description": "An unofficial guide to the HTML canvas element",
+    "pubDate": "2025-04-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/poisoning-well/",
+    "title": "Poisoning Well",
+    "link": "https://heydonworks.com/article/poisoning-well/",
+    "description": "An experimental strategy for contaminating Large Language Models",
+    "pubDate": "2025-03-31T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-br-element/",
+    "title": "The br element",
+    "link": "https://heydonworks.com/article/the-br-element/",
+    "description": "An unofficial guide to the HTML br element",
+    "pubDate": "2024-11-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-button-element/",
+    "title": "The button element",
+    "link": "https://heydonworks.com/article/the-button-element/",
+    "description": "An unofficial guide to the HTML button element",
+    "pubDate": "2024-11-04T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-body-element/",
+    "title": "The body element",
+    "link": "https://heydonworks.com/article/the-body-element/",
+    "description": "An unofficial guide to the HTML body element",
+    "pubDate": "2024-10-31T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-blockquote-element/",
+    "title": "The blockquote element",
+    "link": "https://heydonworks.com/article/the-blockquote-element/",
+    "description": "An unofficial guide to the HTML blockquote element",
+    "pubDate": "2024-10-14T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-bdo-element/",
+    "title": "The bdo element",
+    "link": "https://heydonworks.com/article/the-bdo-element/",
+    "description": "An unofficial guide to the HTML bdo element",
+    "pubDate": "2024-10-02T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-bdi-element/",
+    "title": "The bdi element",
+    "link": "https://heydonworks.com/article/the-bdi-element/",
+    "description": "An unofficial guide to the HTML bdi element",
+    "pubDate": "2024-09-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-b-element/",
+    "title": "The b element",
+    "link": "https://heydonworks.com/article/the-b-element/",
+    "description": "An unofficial guide to the HTML b element",
+    "pubDate": "2024-09-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-audio-element/",
+    "title": "The audio element",
+    "link": "https://heydonworks.com/article/the-audio-element/",
+    "description": "An unofficial guide to the HTML audio element",
+    "pubDate": "2024-09-10T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-aside-element/",
+    "title": "The aside element",
+    "link": "https://heydonworks.com/article/the-aside-element/",
+    "description": "An unofficial guide to the HTML aside element",
+    "pubDate": "2024-08-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-article-element/",
+    "title": "The article element",
+    "link": "https://heydonworks.com/article/the-article-element/",
+    "description": "An unofficial guide to the HTML article element",
+    "pubDate": "2024-08-19T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-area-element/",
+    "title": "The area element",
+    "link": "https://heydonworks.com/article/the-area-element/",
+    "description": "An unofficial guide to the HTML area element",
+    "pubDate": "2024-08-15T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-address-element/",
+    "title": "The address element",
+    "link": "https://heydonworks.com/article/the-address-element/",
+    "description": "An unofficial guide to the HTML address element",
+    "pubDate": "2024-08-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-abbr-element/",
+    "title": "The abbr element",
+    "link": "https://heydonworks.com/article/the-abbr-element/",
+    "description": "An unofficial guide to the HTML abbr element",
+    "pubDate": "2024-08-07T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-anchor-element/",
+    "title": "The anchor element",
+    "link": "https://heydonworks.com/article/the-anchor-element/",
+    "description": "An unofficial guide to the HTML anchor element",
+    "pubDate": "2024-08-02T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/testing-html-with-modern-css/",
+    "title": "Testing HTML With Modern CSS",
+    "link": "https://heydonworks.com/article/testing-html-with-modern-css/",
+    "description": "CSS can be a great HTML testing tool, especially in 2024",
+    "pubDate": "2024-04-07T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/what-is-a-single-page-application/",
+    "title": "What Is A Single-page Application?",
+    "link": "https://heydonworks.com/article/what-is-a-single-page-application/",
+    "description": "A quick explainer about single-page applications are what they are good for.",
+    "pubDate": "2024-02-26T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/what-is-utility-first-css/",
+    "title": "What is Utility-First CSS?",
+    "link": "https://heydonworks.com/article/what-is-utility-first-css/",
+    "description": "Learn about utility-first CSS and what is meant by “utility“ in this context",
+    "pubDate": "2024-02-19T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/offloading-javascript-with-custom-properties/",
+    "title": "Offloading JavaScript With Custom Properties",
+    "link": "https://heydonworks.com/article/offloading-javascript-with-custom-properties/",
+    "description": "Using a custom property to store IntersectionObserver ratio values",
+    "pubDate": "2024-02-07T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/what-are-accessibility-overlays-transcript/",
+    "title": "Transcript: What Are Accessibility Overlays?",
+    "link": "https://heydonworks.com/article/what-are-accessibility-overlays-transcript/",
+    "description": "The transcript for the Webbed Briefs video What Are Accessibility Overlays?",
+    "pubDate": "2023-10-04T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/functional-documentation/",
+    "title": "Functional documentation",
+    "link": "https://heydonworks.com/article/functional-documentation/",
+    "description": "Thoughts on making our documentation as reusable as our code.",
+    "pubDate": "2023-04-26T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/how-i-accidentally-killed-several-ux-designers/",
+    "title": "How I Accidentally Killed Several UX Designers",
+    "link": "https://heydonworks.com/article/how-i-accidentally-killed-several-ux-designers/",
+    "description": "",
+    "pubDate": "2022-11-18T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/i-cant-breathe/",
+    "title": "I Can’t Breathe",
+    "link": "https://heydonworks.com/article/i-cant-breathe/",
+    "description": "",
+    "pubDate": "2022-01-26T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/your-libertarianism-isnt-what-you-think/",
+    "title": "Libertarianism Is Not What You Think",
+    "link": "https://heydonworks.com/article/your-libertarianism-isnt-what-you-think/",
+    "description": "You may be a libertarian, but that does not mean you have to be right wing.",
+    "pubDate": "2020-08-29T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/shit-yourself/",
+    "title": "Shit yourself",
+    "link": "https://heydonworks.com/article/shit-yourself/",
+    "description": "Prove to me why you shouldn’t shit yourself.",
+    "pubDate": "2020-07-19T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/design-tokens-in-eleventy/",
+    "title": "Easily Use Design Tokens In Eleventy",
+    "link": "https://heydonworks.com/article/design-tokens-in-eleventy/",
+    "description": "It's really, really easy to use design tokens with Eleventy",
+    "pubDate": "2020-05-16T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/wordpress-to-eleventy/",
+    "title": "From Wordpress To Eleventy With Ease",
+    "link": "https://heydonworks.com/article/wordpress-to-eleventy/",
+    "description": "A simple script to convert Wordpress data to eleventy data",
+    "pubDate": "2020-04-20T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-random-link/",
+    "title": "The Random Link In The Age Of Static Sites",
+    "link": "https://heydonworks.com/article/the-random-link/",
+    "description": "Exploring a random link implementation for a static site.",
+    "pubDate": "2020-04-10T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/marxian-alienation-and-web-development/",
+    "title": "Marxian Alienation And Web Development",
+    "link": "https://heydonworks.com/article/marxian-alienation-and-web-development/",
+    "description": "What we really mean when we're talking about burnout.",
+    "pubDate": "2020-03-25T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-word-user-is-fine/",
+    "title": "The Word User Is Fine",
+    "link": "https://heydonworks.com/article/the-word-user-is-fine/",
+    "description": "Some words are irredeemable. I don't think the word user is one of them.",
+    "pubDate": "2020-01-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/listen-to-me-not-google/",
+    "title": "Listen To Me And Not Google",
+    "link": "https://heydonworks.com/article/listen-to-me-not-google/",
+    "description": "Wherein Google commissions research that confirms what I knew already, because it was obvious.",
+    "pubDate": "2020-01-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/burnout-and-ambient-music/",
+    "title": "Ambient Burnout",
+    "link": "https://heydonworks.com/article/burnout-and-ambient-music/",
+    "description": "Making ambient music as a means to recuperate from burnout of all kinds",
+    "pubDate": "2020-01-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/font-hacking/",
+    "title": "Font Hacking",
+    "link": "https://heydonworks.com/article/font-hacking/",
+    "description": "What if I told you there was a way to radically alter your web pages without using images, javascript, proprietary CSS3 or any extra markup? What if I told you you didn't have to be an experienced typographer, you could do it for little more than 6Kb and that it would work in Internet Explorer 7? For free? Welcome to Font Hacking, my primer on extracting, deconstructing, altering and replacing letterforms. The workflow I shall be outlining can be used for good or for evil; artfully resculpting t",
+    "pubDate": "2013-03-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/design-clients-on-famous-logotypes/",
+    "title": "Design Clients On Famous Logotypes",
+    "link": "https://heydonworks.com/article/design-clients-on-famous-logotypes/",
+    "description": "For this article, I took a sample of corporate and small business design clients, erased their memories (with a \"mind rubber\"), then asked them to critique a small selection of highly prolific and famous commercial logotypes. To them, this would be the first time they had seen and experienced these brands. Unaware of the massive successes of the companies behind the logos, would this unusual focus group find intrinsic merit in the designs, or would the benefit of unfamiliarity help to disclose f",
+    "pubDate": "2013-08-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/tetris-and-the-power-of-css/",
+    "title": "Tetris And The Power Of CSS",
+    "link": "https://heydonworks.com/article/tetris-and-the-power-of-css/",
+    "description": "To be really good at CSS, you have to learn CSS. I know this sounds like a tautology but I've become aware of a peculiar attitude that preprocessors such as SASS are somehow successors to CSS. Some SASS and LESS nerds are fond of proliferating the following aphorism. It should be noted that its author did not himself intend it as an advocation of preprocessors. The four stages of CSS: 1. I don’t know CSS 2. I know enough CSS to get by 3. I _know_ CSS 4. Fuck CSS @cackhanded They forget that all ",
+    "pubDate": "2013-11-07T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-accessible-current-page-link-conundrum/",
+    "title": "The Accessible Current Page Link Conundrum",
+    "link": "https://heydonworks.com/article/the-accessible-current-page-link-conundrum/",
+    "description": "When I’m done staring with fear-induced catalepsy at the vast array of complex and overlapping app building, testing, integration and deployment tools that are quickly amassing around me, I like to take a little break and try to solve a simple problem. The “current page” link is just such a problem. The current page By “current page”, I mean the page you are on right now. It’s this page to you, or to me if I have the vanity to read this post after writing it. In our navigation schema we like to ",
+    "pubDate": "2014-02-14T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/confessions-of-a-css-expert/",
+    "title": "Confessions Of A CSS Expert",
+    "link": "https://heydonworks.com/article/confessions-of-a-css-expert/",
+    "description": "\"I guess it all started pretty innocently enough. The UX guys would be asking for a new module or something. You know the sort of thing: a search box or paginator. Whatever. So I'd give that block a class like 'search-widget' or 'paginator'; something to make my stylesheet more readable and to help me contain styles within those blocks. It really helped.\" \"Then some guy told me about this thing called 'selector performance'. The idea was you could make the page faster by using classes more as se",
+    "pubDate": "2014-03-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/reinventing-the-hyperlink/",
+    "title": "Reinventing The Hyperlink",
+    "link": "https://heydonworks.com/article/reinventing-the-hyperlink/",
+    "description": "Hi everybody! I've just done a lot of cocaine on the company expense account and I want to talk to you about navigational action controls called \"hyperlinks\" and how to design them into your enterprise-level web application portfolio. YEEEHAWWW. What is a hyperlink? Back in the days of websites, long before The Web App Space, a boffin called Tim Berners-Lee invented something called the \"anchor\", which looked like &lt;a&gt; and was a type of HTML element. It was called an \"anchor\" because it too",
+    "pubDate": "2014-08-01T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/i-do-care-about-sin/",
+    "title": "I Do Care About Sin",
+    "link": "https://heydonworks.com/article/i-do-care-about-sin/",
+    "description": "Note: This article is a deconstruction of a post by Paul Boag called I don’t care if homosexuality is a sin. I recommend you read it unannotated first. Paul \"agonized over writing this post\", so you owe him that. I feel I have a duty to address Paul's post as an atheist, not least because Paul feels that atheists are intent on convincing him he is a bigot. I cannot speak for all atheists &mdash; unlike Paul? :-) &mdash; but I have no such intention. I simply think he has a poor taste in book(s).",
+    "pubDate": "2014-08-25T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-precarious-x-in-ux/",
+    "title": "The Precarious X In UX",
+    "link": "https://heydonworks.com/article/the-precarious-x-in-ux/",
+    "description": "I have a long-held suspicion of anything directed at me — especially anything commercial — that sells itself on its &quot;experiential&quot; qualities. I hate the word &quot;immersive&quot; in particular. &quot;Here, let me waterboard you with my new web app! You're going to love it!&quot; Basically, I'm suspicious of anything that seeks to appeal to me kinesthetically, rather than to my intellect. I want to be treated as a sentient agent; not as the passive stigma to someone's dirty sense polle",
+    "pubDate": "2015-06-11T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/developer-fallacies/",
+    "title": "Developer Fallacies",
+    "link": "https://heydonworks.com/article/developer-fallacies/",
+    "description": "From time to time, web and software developers will use bad arguments to justify their choice of technologies, workflows or org structures, or to disparage others' differing choices. I see this a lot, and I may have even dropped the occassional F-bomb myself. We're particularly vulnerable to making bad arguments because we identify ourselves with being logical. How very wrong we often are. In this post, I'm going to lay out a few of the fallacies I see frequently and I invite you to submit your ",
+    "pubDate": "2016-01-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/progressive-enhancement-makes-me-sad/",
+    "title": "Progressive Enhancement Makes Me Sad",
+    "link": "https://heydonworks.com/article/progressive-enhancement-makes-me-sad/",
+    "description": "There's been a lot of talk lately in favour of progressive enhancement and 'universal' (isomorphic) applications. Apparently, server rendering increases performance, robustness, and the parsability and interoperability of content. I welcome these arguments because I'm magnanimous. But there are grave concerns regarding the adoption of progressive rendering and/or isomorphism which I feel should be addressed and apparently I'm the only one brave enough to go against the grain and address them. No",
+    "pubDate": "2016-03-21T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/writing-less-damn-code/",
+    "title": "Writing Less Damn Code",
+    "link": "https://heydonworks.com/article/writing-less-damn-code/",
+    "description": "I'm not the most talented coder in the world. No, it's true. So I try to write as little code as possible. The less I write, the less there is to break, justify, or maintain. I'm also lazy, so it's all gravy. (ed: maybe run with a food analogy?) But it turns out the only surefire way to make performant Web Stuff is also to just write less. Minify? Okay. Compress? Well, yeah. Cache? Sounds technical. Flat out refuse to code something or include someone else's code in the first place? Now you're t",
+    "pubDate": "2016-08-16T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/aria-controls-is-poop/",
+    "title": "Aria-Controls is Poop",
+    "link": "https://heydonworks.com/article/aria-controls-is-poop/",
+    "description": "We need to talk about aria-controls. It's poorly supported, does very little, and does what it does when it does badly. It is poop and we rely on it way too much. We are short-changing assistive technology users when we do. What it is The aria-controls attribute is a 'relationship attribute' which denotes which elements in a page an interactive element or set of elements has control over and affects. It's commonly used to describe a relationship between a button and the expandable region reveale",
+    "pubDate": "2016-08-21T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/accessibility-the-free-market-and-punching-nazis-while-sitting-down/",
+    "title": "Accessibility, The Free Market, and Punching Nazis While Sitting Down",
+    "link": "https://heydonworks.com/article/accessibility-the-free-market-and-punching-nazis-while-sitting-down/",
+    "description": "Before Hitler set about exterminating Jewish people, he practiced on the disabled. The Aktion T4 programme was particularly fond of administering \"involuntary euthanasia\" to children. Parents were tricked into relinquishing their little ones with the promise that they would be offered special care. This special care consisted of a lethal injection, and would be recorded as a tragic case of pneumonia. Victims included those with Down syndrome, cerebral palsy, and various localized deformities. A ",
+    "pubDate": "2017-02-06T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/html-is-broken/",
+    "title": "HTML Is Broken",
+    "link": "https://heydonworks.com/article/html-is-broken/",
+    "description": "Yes, HTML is broken (see title ↑). Anyone who has used HTML on a big project knows it. Just the other day, I went to code a submit button for a form. Should be pretty straightforward. Well how come this is what I wrote, then? &lt;table> &lt;td> &lt;a class=\"submit\"> &lt;img src=\"submit-image.bmp\"> &lt;/a> &lt;/td> &lt;/table> I've had complaints from users saying they &quot;can't use this shit&quot; and mean developer &quot;friends&quot; have pointed and laughed at me, like it's some sort of fai",
+    "pubDate": "2017-03-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/who-is-inclusive-design-for/",
+    "title": "Who Is Inclusive Design For?",
+    "link": "https://heydonworks.com/article/who-is-inclusive-design-for/",
+    "description": "If you simultaneously Have perfect eyesight Have excellent motor control and coordination Speak English as a first language Find reading and processing complex information easy Never get tired Have as much free time as you wish Live somewhere with access to super fast internet Can afford super fast internet Have a top-of-the-range smartphone or computer Have perfect hearing Never suffer any injuries or illnesses, even temporarily Never feel the effects of pain Are a member of a preferred social/",
+    "pubDate": "2017-12-07T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/css:-a-new-kind-of-javascript/",
+    "title": "CSS: A New Kind Of JavaScript",
+    "link": "https://heydonworks.com/article/css:-a-new-kind-of-javascript/",
+    "description": "Originally published on Medium. Those familiar with the web platform will be well-versed in its two complementary technologies: HTML for documents and their structure, and JavaScript for interaction and styling. For as long as anyone can remember, styling documents — affecting their appearance — has been facilitated via the JavaScript style property, which is exposed for any supporting DOM node. node.style.color = 'red'; Before the advent of this styling API, HTML authors had to write style attr",
+    "pubDate": "2018-07-12T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/reluctant-gatekeeping:-the-problem-with-full-stack/",
+    "title": "Reluctant Gatekeeping: The Problem With Full Stack",
+    "link": "https://heydonworks.com/article/reluctant-gatekeeping:-the-problem-with-full-stack/",
+    "description": "Much of my career as a web designer has been spent, quite happily, working alongside programmers, engineers, people with computer science degrees. In this symbiotic relationship, each party has a secure job with a well-defined role, and gets to work on the thing they are best at and enjoy the most. It’s not that the computer scientists get to do all the code; it’s that they get to do architecture while I do communication, form, and interaction. We all code, because we work on the web, but we cod",
+    "pubDate": "2018-12-03T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-flexbox-holy-albatross/",
+    "title": "The Flexbox Holy Albatross",
+    "link": "https://heydonworks.com/article/the-flexbox-holy-albatross/",
+    "description": "For the last 6 or so months, I've been engaged in a number of activities including (but not limited to): Scratching my head Staring out of the window Laying in bed and staring at the ceiling Screaming into a pillow Rolling around on the floor sweating feverishly while muttering archaic and forbidden incantations Coincidentally, I've been spending this same time period trying to solve a particularly vexing CSS layout problem. You might say the problem has become both my albatross and my Holy Grai",
+    "pubDate": "2019-01-13T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/",
+    "title": "The Flexbox Holy Albatross Reincarnated",
+    "link": "https://heydonworks.com/article/the-flexbox-holy-albatross-reincarnated/",
+    "description": "You may want to read the original Flexbox Holy Albatross post but basically, I missed a step (I was hungover): You can switch between horizontal (multi-column) to vertical (single column) Flexbox layouts just using flex-basis. No min-width or max-width needed — in fact, they just restrict Flexbox from doing its beautiful Flexbox thing. This way, any number of horizontal elements can become vertical elements at a 'container query' breakpoint (40rem in the below example). Here's a CodePen. The cod",
+    "pubDate": "2019-01-14T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/web-accessibility-is-out-to-get-you-and-make-you-feel-sad/",
+    "title": "Web Accessibility Is Out To Get You And Make You Feel Sad",
+    "link": "https://heydonworks.com/article/web-accessibility-is-out-to-get-you-and-make-you-feel-sad/",
+    "description": "Since the landmark Domino's case, I've been having some conversations about web accessibility with people who wouldn't ordinarily take an interest. Some of these conversations have been productive; others have not. The following is a dramatization based on true events. DEVELOPER: Alright, lads? So what's this accessibility thing all about then? Something about pizzas? Love a pizza, me. But no pineapples, haha TRIGGERED. But seriously, it sounds like I might be illegal or something. I don't want ",
+    "pubDate": "2019-10-21T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/pseudo-class-deception/",
+    "title": "Pseudo-class Deception",
+    "link": "https://heydonworks.com/article/pseudo-class-deception/",
+    "description": "Those who are new to using pseudo-classes in their CSS may experience more than a little confusion, and I hope that I can relieve a few headaches. For those who use them frequently, I hope they find a few interesting observations ahead. I attribute much of the confusion surrounding pseudo-classes to the misunderstanding of the prefix 'pseudo'. As with pseudoscience, the prefix does not indicate a partial relationship ('quasi' would be more suitable) but a false one. Why the CSS specification sho",
+    "pubDate": "2011-05-08T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/bobby-howitzer/",
+    "title": "Bobby Howitzer",
+    "link": "https://heydonworks.com/article/bobby-howitzer/",
+    "description": "Some time ago, my alter ego 'Bobby Howitzer' made a set of dirty rock 'n' roll mashups entitled New Rock and Roll is the New Rock and Roll. The original tunes were repurposed as the backing tracks for Bobby's high impact kareoke performances. The live collision of blues howling, plundered beats and chopped up riffs was popular but the original compositions were never made commercially available &hellip; until now. Via the excellent CD baby, you can now download the complete 8 track mini-album; 2",
+    "pubDate": "2011-05-09T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/a-minute-of-listening/",
+    "title": "A Minute Of Listening",
+    "link": "https://heydonworks.com/article/a-minute-of-listening/",
+    "description": "I recently had the privilege of working on a project promoting listening skills amongst primary school children, conceived and curated by Sound &amp; Music and called A Minute of Listening. The project required a desktop application (to be built by NeonTribe) that would be run by a teacher, in front of a class, which played a different 'mystery sound' each time it was powered up. A discussion about the sound would ensue, followed by a reveal (on a further screen) about the sound's origin and rec",
+    "pubDate": "2011-05-11T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/dilapidated/",
+    "title": "Dilapidated",
+    "link": "https://heydonworks.com/article/dilapidated/",
+    "description": "For this experiment, I put my resonator through Gearbox's extraordinary 'Bronze Master' effect and bathed the resulting signal in expansive reverb. Due to the Bronze Master's perculiar ability to help you create unusual harmonics and the resonator's sensitivity to soft plucking, a broad range of murky, eroded sounds can be achieved. At low velocities the sound is distant and muffled; at high velocities it's lively and sharp. Dilapidated (mp3) Notes tend to crackle and disintegrate prematurely, a",
+    "pubDate": "2011-05-11T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/using-the-cascade/",
+    "title": "Using The Cascade",
+    "link": "https://heydonworks.com/article/using-the-cascade/",
+    "description": "In this post, I am going to explain the benefit of exploiting the 'cascading' part of CSS to solve everyday styling problems more efficiently and effectively. The example problem I have chosen is that of clearing content after floats. For those not familiar with the problem that necessitates clearing, it effects elements that appear directly after floated elements in the markup. These elements are pulled up the page to rest behind the floated element(s), obscuring their content and generally mak",
+    "pubDate": "2011-05-13T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/london-book-fair/",
+    "title": "London Book Fair",
+    "link": "https://heydonworks.com/article/london-book-fair/",
+    "description": "Anyone who knows me knows that I'm fascinated by sea life - especially crabs. I keep two pet hermit crabs called Ian and Phillip and I have written and designed a picture book called Crabs Are Odd. You've probably seen the little ad spot for it floating around on HeydonWorks but there's more information &mdash; and a showcase of some of the different crab species featured in the book &mdash; on the dedicated site. Although I've self-published it, I thought it might be interesting to go to the Lo",
+    "pubDate": "2011-05-14T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/can't-touch-me/",
+    "title": "Can't Touch Me",
+    "link": "https://heydonworks.com/article/can't-touch-me/",
+    "description": "Not to be confused with U Can't Touch This by MC Hammer, this is a grinding piece of punk blues co-created - through correspondence - with my good friend Mickey Fordola for a project (currently on hiatus) called The Hemotions. The techy stuff: The backing track features my Gordon-Smith SG, drop-tuned to C, in the right channel and my battered 'Encore' Fender style bass in the left. Despite costing somewhere in the region of £150 new, I've never used another bass that makes such a satisfying soun",
+    "pubDate": "2011-05-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/display:-none-issues/",
+    "title": "Display: None Issues",
+    "link": "https://heydonworks.com/article/display:-none-issues/",
+    "description": "The display:none property is common and has may uses, as well as misuses. It's not always obvious what effect its use has on SEO and its impact on accessibility can be problematic. I hope this post helps to clarify the situation. Types of invisibility 'Display none' means exactly that. It removes the element (and its child elements) from the display. Unlike visibility:hidden, which makes elements invisible but maintains their shape in the layout (much like setting their opacity to zero), display",
+    "pubDate": "2011-06-06T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/sickly-headache/",
+    "title": "Sickly Headache",
+    "link": "https://heydonworks.com/article/sickly-headache/",
+    "description": "It occurs to me that some people looking for information on an ailment using the search term Sickly Headache might chance upon this music post. If you are one of these people, I recommend you DO NOT play the post's associated audio track. The title of the post (and track) refers to the woozy, uneasy sensation that the music evokes, making it somewhat difficult listening even for those who are not currently suffering from a migraine or the like. Before you listen, make sure the volume of your aud",
+    "pubDate": "2011-07-01T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/accessible-text-replacement/",
+    "title": "Accessible Text Replacement",
+    "link": "https://heydonworks.com/article/accessible-text-replacement/",
+    "description": "Following my post regarding the SEO and accessibility issues invoked when using display:none, I am now going to address the text replacement scenario, since I believe this is the only situation where one would legitimately want to hide text from the unassisted visitor (reading visually) but not from a screen reader or search bot. I am aware that this issue has been discussed at length elsewhere (see Mr. Johansson's article and related posts) but I wanted to focus particularly on text replacement",
+    "pubDate": "2011-07-11T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/centennial-by-agonyst/",
+    "title": "Centennial By Agonyst",
+    "link": "https://heydonworks.com/article/centennial-by-agonyst/",
+    "description": "Death and Extreme Metal musicians account for a large proportion of the most accomplished, technically skilled musicians in the world. Although the music is typically dense, fast and heavily distorted, it is also precise and carefully arranged. The accusations (made in ignorance) that it is a musically meritless cacophany would be more accurately levelled at some of the indulgent excesses of hardcore punk, garage rock or a myriad of luridly asinine types of dance music. The real problem with dea",
+    "pubDate": "2011-07-11T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/an-open-data-logo/",
+    "title": "An Open Data Logo",
+    "link": "https://heydonworks.com/article/an-open-data-logo/",
+    "description": "I was recently asked to design a logo for the Open Data Cookbook; a marvellous organisation commited to helping us make use of all the open data (partcularly government data) that has become available. Their excellent wiki provides 'recipes' for sourcing, preparing, fusing and visualising data and is really worth a look. In the interest (and on the theme) of openness - I thought I'd describe the design process that led to the logo itself. Since the remainder of this article will address graphic ",
+    "pubDate": "2011-07-23T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/using-icon-web-fonts/",
+    "title": "Using Icon Web Fonts",
+    "link": "https://heydonworks.com/article/using-icon-web-fonts/",
+    "description": "Update: Since writing this post, I was finally able to create a web font to my liking. You can read about it and download it in this subsequent article. Prefixing (or occasionally suffixing) hyperlinks with little icons can be helpful for qualifying the type of action the link offers the user. A classic example is the deployment of the instantly recognisable (in most of its various permutations) RSS icon. At a glance, items bearing this icon are clearly links that will direct the user to either ",
+    "pubDate": "2011-09-06T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/lowered-expectations/",
+    "title": "Lowered Expectations",
+    "link": "https://heydonworks.com/article/lowered-expectations/",
+    "description": "Benny (@rattegg) and I have been rehearsing and recording for our Wet Face project for some time now and &mdash; provided that the venue staff don't get cold feet &mdash; our first performance is imminent. Having 'mastered' (for 'mastered' read 'bathed in distortion and given a perfunctory mid-range spike') a few tracks in the last week, I thought I'd put one up here. Please feel free to download it, retag it as a Madonna track and seed it with your favourite file sharing software. Wet Face Wet ",
+    "pubDate": "2011-09-13T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/a-free-icon-web-font/",
+    "title": "A Free Icon Web Font",
+    "link": "https://heydonworks.com/article/a-free-icon-web-font/",
+    "description": "In a previous article, I addressed the many advantages of using a web font (in place of images) to render icons into your UI design. In the same article I mentioned a frustrating deficit of high quality, free icon web fonts available for embedding and conceded my own failure at building one with Fontstruct (less a font design tool than a mental health risk). After continued experimentation, I found a satisfactory way to create a TTF and I'm now able to offer you Heydings Icons. It's a fairly mod",
+    "pubDate": "2011-10-18T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/vintage-tobacco-advertising/",
+    "title": "Vintage Tobacco Advertising",
+    "link": "https://heydonworks.com/article/vintage-tobacco-advertising/",
+    "description": "Rock and roll has always been a contrary form of music. At once 'the devil's music' and the soundtrack to the American Dream, it has leant itself to as much commercial dogma as rebellious transgression. Rock and roll is both savage and servile. It's sexual awakenings and automobile sales. This moral and ideological duplicity is what makes the genre so interesting and it's something that I don't think is acknowledged frequently enough. Whilst researching footage for Wet Face's Lowered Expectation",
+    "pubDate": "2011-12-29T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/a-perch-xml-sitemap/",
+    "title": "A Perch XML Sitemap",
+    "link": "https://heydonworks.com/article/a-perch-xml-sitemap/",
+    "description": "One of the best things about the Perch CMS is its lack of boilerplate. In fact, Perch creator Rachel Andrew is quite opposed to such bloated, polyfill-ridden framework code. Why include a mass of default code you've yet to decide you even need? The performance hit is just not tolerable. The trade-off (if you can call 'having tremendous fun authoring your own code' a trade-off) is that there are a number of features that are simply not supported by default. At the time of writing, a dynamic XML s",
+    "pubDate": "2012-04-19T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/types-of-web-developer/",
+    "title": "Types Of Web Developer",
+    "link": "https://heydonworks.com/article/types-of-web-developer/",
+    "description": "To say one is a Web Developer is similar to saying one is an engineer. Without further clarification, the label means very little. To help with apprehending the various specialisms within the field, I have created this transparently cynical piece of link bait. My list is by no means comprehensive and I invite you to offer additions via the Twitter comments (#devtypes) or by email (heydon@heydonworks.com) if you wish to submit a fuller description. Compelling suggestions will be included with att",
+    "pubDate": "2012-05-01T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/an-app-icon-font/",
+    "title": "An App Icon Font",
+    "link": "https://heydonworks.com/article/an-app-icon-font/",
+    "description": "My 'Heydings Icons' font has been doing the rounds for some time now, and I am proud to have been one of the early innovators to release a completely free, embeddable icon font for web UI designers. However, until now I have singularly failed to promote the availability of Heydings Icons' companion font, 'Heydings Controls'. This is despite the fact that it has been available from Dafont and Font Squirrel for some months. As I wrote in my original article for Heydings Icons, this set was intende",
+    "pubDate": "2012-05-15T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/css-is-not-simple/",
+    "title": "CSS Is Not Simple",
+    "link": "https://heydonworks.com/article/css-is-not-simple/",
+    "description": "In CSS, there are four ways to visually position HTML elements within your web page. These are static, relative, absolute and fixed. There can be a great deal of confusion when it comes to discerning between these values, so I'd like to help clear things up. Or perhaps not &hellip; Absolutely relative Relatively positioned elements are positioned relative to where they would appear if they weren't set to position:relative; a positional value which makes them relative to themselves. In other word",
+    "pubDate": "2012-05-20T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/pingomatic-for-perch/",
+    "title": "Pingomatic For Perch",
+    "link": "https://heydonworks.com/article/pingomatic-for-perch/",
+    "description": "I love the Perch CMS. It isn't crammed with features and plugins to placate each and every type of developer; it just does the Content Management task really well. Nonetheless, every so often I look for a little tool that Wordpress-derived muscle memory tells me should be present, and I'm left wanting. The 'Send Pings!' button One such feature was XML sitemap support, which I covered in my article A Perch XML Sitemap. In this post, I'm going to help Perch bloggers incorporate Ping-o-matic. What ",
+    "pubDate": "2012-08-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/accessible-buttons-jquery-plugin/",
+    "title": "Accessible Buttons Jquery Plugin",
+    "link": "https://heydonworks.com/article/accessible-buttons-jquery-plugin/",
+    "description": "Please note: The following should be considered an experiment. There is rarely a good reason not to use a &lt;button&gt; element for button-like controls, especially if it means loading a javascript resource just to polfill the behaviors that &lt;button&gt; already offers. How many of the elements that users can click on in your web pages and applications are actually &lt;button&gt;s? As outlined in Marco Zehe's post, Making Clickables Accessible, it is possible, with the help of attribution spe",
+    "pubDate": "2013-05-10T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/shrinking-button-outlines/",
+    "title": "Shrinking Button Outlines",
+    "link": "https://heydonworks.com/article/shrinking-button-outlines/",
+    "description": ".test-button, .test-button-2 { cursor: pointer; border: 0; font-family: inherit; display: inline-block; margin: 1.5em auto; font-size: 1.5em; border-radius: 0; background-color: #802626; padding: 0.25em 1em; color: #fff; outline: 2px solid transparent; outline-offset: 50px; -webkit-transition: 1s ease all; -moz-transition: 1s ease all; -ms-transition: 1s ease all; -o-transition: 1s ease all; transition: 1s ease all; } .test-button:focus { outline: 2px solid #222; outline-offset: 0; } .test-butto",
+    "pubDate": "2013-11-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/apps-for-all:-praise-and-errata/",
+    "title": "Apps For All: Praise And Errata",
+    "link": "https://heydonworks.com/article/apps-for-all:-praise-and-errata/",
+    "description": "In case you weren't already aware, I wrote a book. This is an unusual book since it is a whole technical book dedicated to making web applications accessible. Want to understand how to make dynamic, interactive applications that don't alienate and annoy folks? Using WAI-ARIA and other cool stuff? I've got you covered. Apps For All: Coding Accessible Web Applications So there you have it. This post is where I'm collecting together reviews and endorsements for the book, plus where I'm listing any ",
+    "pubDate": "2014-07-21T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/squib-font/",
+    "title": "Squib Font",
+    "link": "https://heydonworks.com/article/squib-font/",
+    "description": "Squib Font The name Squib comes from \"Square\" and \"Slab\". Squib supports a total of 165 characters, including all the basic punctuation characters and common Western European accents. It also has an eszett! Squib demo page and download Squib on Github",
+    "pubDate": "2014-08-15T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/auticons/",
+    "title": "Auticons",
+    "link": "https://heydonworks.com/article/auticons/",
+    "description": "Auticons Icon Font Auticons is an icon font and CSS set that harnesses the awesome power of attribute selectors. It places resolution independent icons before or after any hyperlink with an href that matches a certain, expected pattern. In other words, it's an automatic icon font. Auticons demo page Auticons download",
+    "pubDate": "2014-08-16T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/paragrabbr/",
+    "title": "Paragrabbr",
+    "link": "https://heydonworks.com/article/paragrabbr/",
+    "description": "Paragrabbr I use Paragrabbr a lot. It's a lorem ipsum generator I wrote in AngularJS which includes special punctuation &mdash; like em dashes &mdash; and phrasing elements like &lt;a&gt;, &lt;strong&gt; and even &lt;kbd&gt;. Helps you get your type design detail right. Use Paragrabbr",
+    "pubDate": "2014-08-16T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/revenge.css/",
+    "title": "Revenge.css",
+    "link": "https://heydonworks.com/article/revenge.css/",
+    "description": "REVENGE.CSS Revenge.css is a CSS bookmarklet that reports bad html using pseudo content. If the page you use it with has malformed links, deprecated attributes, &lt;div&gt;s inside inline elements, inaccessible buttons, badly nested sections or other errors, you'll see some ugly, pink errors written in nobody's favourite font: Comic Sans. Revenge.css Revenge.css on Github",
+    "pubDate": "2014-08-16T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/practical-aria-examples/",
+    "title": "Practical Aria Examples",
+    "link": "https://heydonworks.com/article/practical-aria-examples/",
+    "description": "Practical ARIA Examples I have written a book about web application accessibility using WAI-ARIA for Smashing Magazine &mdash; the first of its kind. This popular page hosts all of the examples from the book and more. Explore the examples",
+    "pubDate": "2014-08-17T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/a-double-edged-sword/",
+    "title": "A Double Edged Sword",
+    "link": "https://heydonworks.com/article/a-double-edged-sword/",
+    "description": "Editor's note: This article has been submitted anonymously to me as the editor of geekmentalhelp.com &mdash; the website of the #geekmentalhelp campaign. Not everyone is in a position to \"come out\" as a sufferer of mental health problems, but they are still out there; members of our community. This week is Geek Mental Help Week. I admit to having mixed feelings about this. On one hand, I salute the effort. We need more awareness of these very disabling conditions. On the other hand, these kind o",
+    "pubDate": "2014-10-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-agreement/",
+    "title": "The Agreement",
+    "link": "https://heydonworks.com/article/the-agreement/",
+    "description": "I had this one friend at school. Let's call him Darren. Darren was a liar — a compulsive one — and boy did he tell some whoppers. Not &quot;the world was created in one week&quot; whoppers, but big ones nonetheless. One lie Darren would tell, at the age of 12, was that he had lost his virginity. Now, nobody had any primary evidence (eww) that this was not the case. But his diminutive age, the fact that he went to an all boys school, his reputation for demonstrably lying in other cases and his re",
+    "pubDate": "2015-05-10T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/frame-based-animation-with-sass/",
+    "title": "Frame Based Animation With Sass",
+    "link": "https://heydonworks.com/article/frame-based-animation-with-sass/",
+    "description": "Frame Based Animation with Sass I wanted an easy way to create traditional animations, wherein each frame is a different drawing. I created this Sass @mixin which generates keyframe animation blocks for nth children, placing each of these \"frames\" in an animated sequence. Note the use of the steps(1) timing function&hellip; Code on Github (including Bower command for installation if preferable)",
+    "pubDate": "2015-06-05T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/an-album-for-a11y/",
+    "title": "An album for a11y",
+    "link": "https://heydonworks.com/article/an-album-for-a11y/",
+    "description": "TL;DR I'm putting together an album to raise money for an organization that supports web accessibility. I had this brainwave while nursing a hangover in Brighton after Responsive Day Out: There are a load of folks working in the overlapping fields of web standards and accessibility who are musicians. Some really quite accomplished. So, why not ask around and have some tracks donated to a &quot;charity&quot; album which generates funds to support web accessibility. Simple(s). Tracks flying in The",
+    "pubDate": "2015-06-28T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/heydon-is-dead/",
+    "title": "Heydon Is Dead",
+    "link": "https://heydonworks.com/article/heydon-is-dead/",
+    "description": "This post is the first in a two part series examining the senescence and ultimate mortality of this blog's proprietor, Heydon Pickering. This week, guest author Malcolm Leader-Thought will make the case that, yes, Heydon Pickering is, in fact, dead; kaput; pushing up the daisies. In the second installment, Tim Upman-Ship will argue that, &quot;no, Heydon is not dead, in fact I saw him walking down Bedford Street on Saturday morning. He looked well, actually. I think he's working out.&quot; Have ",
+    "pubDate": "2015-07-15T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/screen-reader-strategy-survey/",
+    "title": "Screen Reader Strategy Survey",
+    "link": "https://heydonworks.com/article/screen-reader-strategy-survey/",
+    "description": "They say accessibility is about people. Inaccessibility is about people too, of course. In either case, it's people — flesh-and-blood, living, breathing people — that interfaces are built to cater for, successfully or otherwise. What we learn in user research is that people are unpredictable, resistant, hesitant, contrary, determined, inventive and most of all disparate. Yet we spend large amounts of our time as assistive technology testers worrying about the technicalities of which screen reade",
+    "pubDate": "2015-09-18T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/flexbox-grid-finesse/",
+    "title": "Flexbox Grid Finesse",
+    "link": "https://heydonworks.com/article/flexbox-grid-finesse/",
+    "description": "(This post was originally published on Medium, put has a permanent home here.) Flexbox&mdash;not to be confused with Sex Box, the British TV show wherein Mariella Frostrup interviews people who&#x2019;ve just had sex in a box&mdash;is the CSS layout toolkit de rigueur. Of all the celebrated features of Flexbox, it is the light work it makes of producing wrappable grids, tolerant of dynamic content, that I think&#x2019;s integral. In this article, I&#x2019;ll cover a few techniques to exploit Fle",
+    "pubDate": "2015-12-05T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/look-at-this-shitty-tweet-button/",
+    "title": "Look At This Shitty Tweet Button",
+    "link": "https://heydonworks.com/article/look-at-this-shitty-tweet-button/",
+    "description": "Tweet //",
+    "pubDate": "2016-02-04T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/responses-to-the-screen-reader-strategy-survey/",
+    "title": "Responses To The Screen Reader Strategy Survey",
+    "link": "https://heydonworks.com/article/responses-to-the-screen-reader-strategy-survey/",
+    "description": "In September of last year, I decided I wanted to hear stories about how screen reader users access The Web. I suspected, as a sighted web user, I made a lot of incorrect assumptions. Accordingly, I composed seven questions to find out about strategies for reading and operation. Following are the raw, unedited responses (minus the occasional typo). I don't want to editorialize, but let's just say I learned a lot. (It should be noted that two respondents wanted it to be known that they believed th",
+    "pubDate": "2016-06-30T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/star-trek-tng:-first-impressions/",
+    "title": "Star Trek TNG: First Impressions",
+    "link": "https://heydonworks.com/article/star-trek-tng:-first-impressions/",
+    "description": "Star Trek: The Next Generation was on TV in the UK when I was a little younger than Wesley Crusher, but I never watched it properly. I've started watching it on Netflix and I'm about twenty episodes into the first season. These are some notes I've made. The set is very sterile. Reassuringly tidy though. No dashboard dross or the like. I like how the first baddies introduced (the Ferenghi) are described as &quot;capitalists&quot; and therefore evil. They act a bit like the crappier orcs out of LO",
+    "pubDate": "2016-07-08T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/designer-is-not-a-profession/",
+    "title": "Designer Is Not A Profession",
+    "link": "https://heydonworks.com/article/designer-is-not-a-profession/",
+    "description": "Design is a wonderful thing. It's an integral part of how we work to shape the world around us. But it is not a discrete profession or occupation. We are not divided into designers and people who are not designers. If someone says you don't have the right background, you haven't spoken to or listened to the right people, or you don't have the appropriate skills or experience to be a designer? They are wrong. If someone says particular skills — creative, discursive, technical — preclude you from ",
+    "pubDate": "2016-08-22T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/signs-you-may-be-a-designer-not-just-a-coder/",
+    "title": "Signs You May Be A Designer, Not Just A Coder",
+    "link": "https://heydonworks.com/article/signs-you-may-be-a-designer-not-just-a-coder/",
+    "description": "You spend more time contemplating and discussing code than you do writing it. You spend more time thinking about how the end product affects users than you do about how pleasurable it is for you to write its code. You think in terms of relationships and systems, not just the thing you're coding up at the time. You choose technologies based on what they can achieve, not how new, trendy, or ergonomic they are. When a bug ticket is given to you, you take the time to consider what its implications a",
+    "pubDate": "2016-11-03T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/working-for-people/",
+    "title": "Working For People",
+    "link": "https://heydonworks.com/article/working-for-people/",
+    "description": "2016 has not been an exemplary year in some ways. What with the anti-intellectualism and fascism and kleptocracy and all. And you know what? I'm not completely convinced everything's going to be okay again when the clock strikes twelve on New Year's Eve. I'm not convinced the far right will develop a sudden fondness for anyone with a better tan than them, doctors and scientists will be respected and revered for actually knowing a thing or two, or Mike Pence's head will spontaneously fall off, ex",
+    "pubDate": "2016-11-23T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/the-new-linkin-park-album-is-not-by-nasum/",
+    "title": "The New Linkin Park Album Is Not By Nasum",
+    "link": "https://heydonworks.com/article/the-new-linkin-park-album-is-not-by-nasum/",
+    "description": "I've just been listening to the new Linkin Park album. The first thing that jumped out at me was that, in keeping with previous Linkin Park albums, it is not in fact an album by Nasum. This appears to have caused disappointment among their audience, and rightly so. In one case, a fan threw a jug at singer Chester Bennington. A jug. I say threw, but it was more a sort of lacklustre roll — the kind of half-baked act of defiance one might expect to be inspired by Linkin fucking Park. Linkin Park ha",
+    "pubDate": "2017-06-24T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/aria-label-is-a-xenophobe/",
+    "title": "aria-label is a xenophobe",
+    "link": "https://heydonworks.com/article/aria-label-is-a-xenophobe/",
+    "description": "Internationalization is a major component of inclusive design. But with automatic translation features provided by Google and Microsoft, it's mercifully simple to support — at least at the most basic level. Just include a default language for the page, like lang=&quot;en&quot;, on the &lt;html&gt; element to give translation services a helping hand. It's amazing how many sites don't do this. I know, because as an accessibility specialist I have to look out for it. If it's not there, there are ce",
+    "pubDate": "2018-02-01T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/your-tooltips-are-bogus/",
+    "title": "Your Tooltips Are Bogus",
+    "link": "https://heydonworks.com/article/your-tooltips-are-bogus/",
+    "description": "Tooltips are implemented all over the place. Badly. Let me count the ways. It's attached to a non-interactive element It's not a tooltip if there's no tool (control, button, whatever). What you're really doing is just hiding content away. Why? It's attached to a non-interactive element that's focusable So, at some point, you realize that your faux-tooltip (see above) only works on hover, meaning keyboard users don't have access to it. Accordingly, you add tabindex=&quot;0&quot; to it or turn it ",
+    "pubDate": "2018-03-21T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/quick-2018-review/",
+    "title": "Quick 2018 Review",
+    "link": "https://heydonworks.com/article/quick-2018-review/",
+    "description": "Just for the sake of some links for the most part — in case you missed anything. I helped Bulb make their new, accessible design system Inclusive Components went from blog to book I created a customizable generative art gallery with SVG and Vue I learned lots about web components and created a prototyping tool I gave my third Fronteers conference talk I wrote and produced my first instructional videos, on CSS custom properties and CSS shapes I wrote about the many JavaScript arrow functions I sp",
+    "pubDate": "2018-12-24T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/facebook-withdraws-react/",
+    "title": "Facebook Withdraws React",
+    "link": "https://heydonworks.com/article/facebook-withdraws-react/",
+    "description": "It's important you sign and share this petition. Right now, it's the closest thing Britain has to averting serious disaster in the next few days. It's really important, unlike the status of a single open source JavaScript project. Thank you. Revoke Article 50",
+    "pubDate": "2019-03-22T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
+  },
+  {
+    "id": "https://heydonworks.com/article/every-layout-is-released:-some-facts/",
+    "title": "Every Layout Is Released: Some Facts",
+    "link": "https://heydonworks.com/article/every-layout-is-released:-some-facts/",
+    "description": "In case you haven't already heard: the full version of Every Layout is now ready for purchase! You'll find all the information you need on the Every Layout site. This post is just an opportunity to tell you that in a different channel (done!) and to share some fun™ facts about how Every Layout came together. Andy and I didn't actually meet IRL (in real life) until after the launch of our product. The site/book includes over 100 diagrams, all in black and white, and created in the superior (free!",
+    "pubDate": "2019-07-29T00:00:00.000Z",
+    "feedUrl": "https://heydonworks.com/feed.xml"
   }
 ]
