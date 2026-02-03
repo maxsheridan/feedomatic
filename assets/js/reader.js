@@ -11,6 +11,9 @@ let allFeeds = [];
 let allItems = [];
 let metadata = {};
 
+// Selection state for batch operations
+let selectedItems = new Set();
+
 // Get read items from localStorage
 function getReadItems() {
     return new Set(JSON.parse(localStorage.getItem(READ_ITEMS_KEY) || '[]'));
@@ -475,18 +478,126 @@ async function deleteItem(itemId) {
     }
 }
 
-function toggleItem(itemId) {
+function toggleItem(itemId, isArchive) {
     const content = document.getElementById(`content-${itemId}`);
     const isCurrentlyExpanded = content.classList.contains('expanded');
     
-    // Close all other expanded items
-    document.querySelectorAll('.item-content.expanded').forEach(item => {
-        item.classList.remove('expanded');
-    });
+    if (!isArchive) {
+        // For new items, close all others (single open)
+        document.querySelectorAll('#newItems .item-content.expanded').forEach(item => {
+            item.classList.remove('expanded');
+        });
+    }
+    // For archive items, allow multiple to stay open
     
-    // Toggle the clicked item (if it was closed, open it; if it was open, it stays closed)
+    // Toggle the clicked item
     if (!isCurrentlyExpanded) {
         content.classList.add('expanded');
+    } else {
+        content.classList.remove('expanded');
+    }
+}
+
+function toggleItemSelection(itemId) {
+    if (selectedItems.has(itemId)) {
+        selectedItems.delete(itemId);
+    } else {
+        selectedItems.add(itemId);
+    }
+    updateBatchDeleteButton();
+    updateCheckboxes();
+}
+
+function updateCheckboxes() {
+    updateBatchDeleteButton();
+    document.querySelectorAll('.item-checkbox').forEach(checkbox => {
+        const itemId = decodeURIComponent(checkbox.dataset.itemId);
+        checkbox.checked = selectedItems.has(itemId);
+    });
+}
+
+function updateBatchDeleteButton() {
+    const button = document.getElementById('batchDeleteButton');
+    if (!button) return;
+    
+    if (selectedItems.size > 0) {
+        button.textContent = `Delete Selected (${selectedItems.size})`;
+        button.style.display = 'block';
+    } else {
+        button.style.display = 'none';
+    }
+}
+
+async function batchDeleteItems() {
+    if (!githubConfig) {
+        showStatus('Cannot delete items: GitHub config missing', true);
+        return;
+    }
+    
+    if (selectedItems.size === 0) return;
+    
+    if (!confirm(`Permanently delete ${selectedItems.size} item(s)? This cannot be undone.`)) return;
+    
+    showStatus('Deleting items...', false);
+    
+    try {
+        const { user, repo, token } = githubConfig;
+        const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/data/items.json`;
+        
+        // Get current items.json
+        const getResponse = await fetch(apiUrl, {
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+        
+        if (!getResponse.ok) {
+            throw new Error('Failed to fetch items.json');
+        }
+        
+        const fileData = await getResponse.json();
+        const currentItems = JSON.parse(atob(fileData.content));
+        
+        // Remove selected items
+        const updatedItems = currentItems.filter(i => !selectedItems.has(i.id));
+        
+        // Update items.json
+        const updateResponse = await fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: `Delete ${selectedItems.size} items`,
+                content: btoa(JSON.stringify(updatedItems, null, 2)),
+                sha: fileData.sha
+            })
+        });
+        
+        if (!updateResponse.ok) {
+            throw new Error('Failed to update items.json');
+        }
+        
+        // Remove from local state
+        allItems = allItems.filter(i => !selectedItems.has(i.id));
+        
+        // Remove from localStorage read items
+        const readItems = getReadItems();
+        selectedItems.forEach(id => readItems.delete(id));
+        saveReadItems(readItems);
+        
+        // Clear selection
+        selectedItems.clear();
+        
+        renderItems();
+        showStatus(`✓ ${updatedItems.length !== currentItems.length ? currentItems.length - updatedItems.length : 0} item(s) deleted`, false);
+        
+    } catch (error) {
+        console.error('Error deleting items:', error);
+        showStatus(`✗ ${error.message}`, true);
     }
 }
 
@@ -523,9 +634,10 @@ function renderItemList(containerId, items, isArchive) {
         
         return `
             <div class="item">
-                <div class="item-header" onclick="toggleItem('${safeId}')">
-                    <div class="item-title">${escapeHtml(item.title)}</div>
-                    <div class="item-meta">${date}</div>
+                <div class="item-header">
+                    ${isArchive ? `<input type="checkbox" class="item-checkbox" data-item-id="${encodedId}">` : ''}
+                    <div class="item-title" onclick="toggleItem('${safeId}', ${isArchive})">${escapeHtml(item.title)}</div>
+                    <div class="item-meta" onclick="toggleItem('${safeId}', ${isArchive})">${date}</div>
                 </div>
                 <div class="item-content" id="content-${safeId}">
                     <div class="item-description">${escapeHtml(item.description)}</div>
@@ -553,6 +665,7 @@ function renderItemList(containerId, items, isArchive) {
                 markAsUnread(itemId);
             }
         });
+    });
     
     // Add event listeners for delete buttons
     container.querySelectorAll('.delete-button').forEach(button => {
@@ -561,7 +674,17 @@ function renderItemList(containerId, items, isArchive) {
             deleteItem(itemId);
         });
     });
+    
+    // Add event listeners for checkboxes
+    container.querySelectorAll('.item-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const itemId = decodeURIComponent(this.dataset.itemId);
+            toggleItemSelection(itemId);
+        });
     });
+    
+    // Update checkbox states to match current selection
+    updateCheckboxes();
 }
 
 function smartQuotes(text) {

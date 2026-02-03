@@ -215,7 +215,8 @@ button:disabled {
     margin-block-end: var(--space-0);
 }
 
-.feeds-header {
+.feeds-header,
+.archive-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -248,9 +249,17 @@ button:disabled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5rem;
     padding: var(--space--1);
     background-color: var(--surface-background);
     cursor: pointer;
+}
+
+.item-checkbox {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
 }
 
 .item-header:hover {
@@ -265,6 +274,7 @@ button:disabled {
 .item-title {
     flex: 1;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .item-meta {
