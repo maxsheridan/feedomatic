@@ -95,7 +95,9 @@ async function waitForWorkflowCompletion() {
     }
 }
 
-function saveGitHubConfig() {
+function saveGitHubConfig(e) {
+    if (e) e.preventDefault(); // Prevent form submission
+    
     const user = document.getElementById('githubUser').value.trim();
     const repo = document.getElementById('githubRepo').value.trim();
     const token = document.getElementById('githubToken').value.trim();
@@ -109,7 +111,12 @@ function saveGitHubConfig() {
     localStorage.setItem(GITHUB_CONFIG_KEY, JSON.stringify(config));
     githubConfig = config;
     
-    document.getElementById('setupSection').classList.add('hidden');
+    const setupSection = document.getElementById('setupSection');
+    const settingsButton = document.getElementById('settingsButton');
+    setupSection.classList.add('hidden');
+    if (settingsButton) {
+        settingsButton.classList.remove('active');
+    }
     showStatus('Configuration saved! You can now add feeds.', false);
 }
 
@@ -117,8 +124,48 @@ function checkSetup() {
     githubConfig = getGitHubConfig();
     if (!githubConfig) {
         document.getElementById('setupSection').classList.remove('hidden');
+        updateSetupUI(false);
     } else {
         document.getElementById('setupSection').classList.add('hidden');
+    }
+}
+
+function toggleSettings() {
+    const setupSection = document.getElementById('setupSection');
+    const settingsButton = document.getElementById('settingsButton');
+    const isHidden = setupSection.classList.contains('hidden');
+    
+    if (isHidden) {
+        // Opening settings
+        updateSetupUI(true);
+        
+        // Pre-fill form with existing values
+        if (githubConfig) {
+            document.getElementById('githubUser').value = githubConfig.user || '';
+            document.getElementById('githubRepo').value = githubConfig.repo || '';
+            document.getElementById('githubToken').value = githubConfig.token || '';
+        }
+        
+        setupSection.classList.remove('hidden');
+        settingsButton.classList.add('active');
+        setupSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // Closing settings
+        setupSection.classList.add('hidden');
+        settingsButton.classList.remove('active');
+    }
+}
+
+function updateSetupUI(isEditing) {
+    const title = document.getElementById('setupTitle');
+    const description = document.getElementById('setupDescription');
+    
+    if (isEditing) {
+        title.textContent = 'GitHub Configuration';
+        description.textContent = 'Update your GitHub details (stored in browser only):';
+    } else {
+        title.textContent = 'Initial Setup Required';
+        description.textContent = 'To add feeds via the UI, add your GitHub details here (stored in browser only):';
     }
 }
 
@@ -359,7 +406,7 @@ function renderFeeds() {
     const allButton = document.createElement('button');
     allButton.className = 'feed-button' + (selectedFeed === 'all' ? ' active' : '');
     allButton.textContent = 'All Feeds';
-    allButton.onclick = () => selectFeed('all');
+    allButton.addEventListener('click', () => selectFeed('all'));
     container.appendChild(allButton);
     
     // Individual feed buttons
@@ -374,13 +421,13 @@ function renderFeeds() {
         const remove = document.createElement('span');
         remove.className = 'remove';
         remove.textContent = '×';
-        remove.onclick = (e) => {
+        remove.addEventListener('click', (e) => {
             e.stopPropagation();
             removeFeed(feed);
-        };
+        });
         button.appendChild(remove);
         
-        button.onclick = () => selectFeed(feed);
+        button.addEventListener('click', () => selectFeed(feed));
         container.appendChild(button);
     });
 }
@@ -636,8 +683,8 @@ function renderItemList(containerId, items, isArchive) {
             <div class="item">
                 <div class="item-header">
                     ${isArchive ? `<input type="checkbox" class="item-checkbox" data-item-id="${encodedId}">` : ''}
-                    <div class="item-title" onclick="toggleItem('${safeId}', ${isArchive})">${escapeHtml(item.title)}</div>
-                    <div class="item-meta" onclick="toggleItem('${safeId}', ${isArchive})">${date}</div>
+                    <div class="item-title" data-toggle-id="${safeId}" data-is-archive="${isArchive}">${escapeHtml(item.title)}</div>
+                    <div class="item-meta" data-toggle-id="${safeId}" data-is-archive="${isArchive}">${date}</div>
                 </div>
                 <div class="item-content" id="content-${safeId}">
                     <div class="item-description">${escapeHtml(item.description)}</div>
@@ -683,6 +730,15 @@ function renderItemList(containerId, items, isArchive) {
         });
     });
     
+    // Add event listeners for item title/meta clicks (toggle expand/collapse)
+    container.querySelectorAll('[data-toggle-id]').forEach(element => {
+        element.addEventListener('click', function() {
+            const toggleId = this.dataset.toggleId;
+            const isArchive = this.dataset.isArchive === 'true';
+            toggleItem(toggleId, isArchive);
+        });
+    });
+    
     // Update checkbox states to match current selection
     updateCheckboxes();
 }
@@ -705,6 +761,44 @@ function escapeHtml(text) {
     return smartQuotes(div.innerHTML);
 }
 
+// Initialize event listeners
+function initEventListeners() {
+    // Setup form submission
+    const setupForm = document.getElementById('setupForm');
+    if (setupForm) {
+        setupForm.addEventListener('submit', saveGitHubConfig);
+    }
+    
+    // Add feed button
+    const addFeedButton = document.getElementById('addFeedButton');
+    if (addFeedButton) {
+        addFeedButton.addEventListener('click', addFeed);
+    }
+    
+    // Feed URL input (Enter key)
+    const feedUrlInput = document.getElementById('feedUrl');
+    if (feedUrlInput) {
+        feedUrlInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                addFeed();
+            }
+        });
+    }
+    
+    // Reload button
+    const reloadButton = document.getElementById('reloadButton');
+    if (reloadButton) {
+        reloadButton.addEventListener('click', () => location.reload());
+    }
+    
+    // Batch delete button
+    const batchDeleteButton = document.getElementById('batchDeleteButton');
+    if (batchDeleteButton) {
+        batchDeleteButton.addEventListener('click', batchDeleteItems);
+    }
+}
+
 // Initialize
+initEventListeners();
 checkSetup();
 loadData();

@@ -31,12 +31,14 @@
     --space-2: calc(var(--space-1) * var(--ratio));
     --space-3: calc(var(--space-2) * var(--ratio));
     --body: 'Geist';
-    --heading: 'Lora';
+    --heading: 'Geist';
     --mono: 'Geist Mono';
     --paragraph: calc(1rem + .25vw);
     --label:  calc(var(--paragraph) * .75);
     --primary: #1A1A1A;
-    --accent: #0C5551;
+    --accent: #591D73;
+    --logo-shade: #591D73;
+    --logo-fill: #FFDC00;
     --border: #D0D0D0;
     --background: #EAE8E8;
     --surface-background: #F5F5F5;
@@ -48,7 +50,9 @@
 @media (prefers-color-scheme: dark) {
     :root {
         --primary: #E0E0E0;
-        --accent: #FFCBDB;
+        --accent: #FFDC00;
+        --logo-shade: #FFDC00;
+        --logo-fill: #591D73;
         --border: #505050;
         --background: #1A1A1A;
         --surface-background: #2A2A2A;
@@ -89,7 +93,7 @@ body {
 }
 
 main > * + * {
-    margin-block-start: var(--space-1);
+    margin-block-start: var(--space-2);
 }
 
 h1 {
@@ -101,7 +105,7 @@ h1 {
 
 h2 {
     font-family: var(--heading);
-    font-size: calc(var(--paragraph) * 1.5);
+    font-size: calc(var(--paragraph) * 2);
     font-weight: 600;
 }
 
@@ -124,21 +128,18 @@ hr {
 }
 
 .setup-section {
-    padding: 1rem;
+    padding: var(--space--1);
     border: 1px solid var(--border);
     border-radius: .25rem;
     background-color: var(--surface-background);
 }
 
-.setup-section > * + * {
-    margin-block-start: var(--space-0);
+.setup-section > * + *, 
+#setupForm > * + * {
+    margin-block-start: var(--space-1);
 }
 
-.setup-section > div *:not(p.after-field) + *:not(p.after-field) {
-    margin-block-start: var(--space--2);
-}
-
-p.after-field {
+#setupForm > div * + * {
     margin-block-start: var(--space--1);
 }
 
@@ -155,7 +156,7 @@ p.after-field {
 .setup-section input[type="text"],
 .setup-section input[type="password"] {
     width: 100%;
-    padding: .5rem 1rem;
+    padding: var(--space--1);
     border: 1px solid var(--border);
     border-radius: .25rem;
     font-size: var(--label);
@@ -165,17 +166,21 @@ p.after-field {
 
 .input-group {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
+}
+
+svg {
+    margin-block-end: -.5rem; /* Removes extra space */
 }
 
 input[type="text"] {
     flex: 1;
-    padding: 10px 12px;
+    padding: var(--space--1);
     border: 1px solid var(--border);
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
-    border-radius: 4px;
-    font-size: 14px;
+    border-radius: .25rem;
+    font-size: var(--label);
+    color: var(--primary);
+    background-color: var(--surface-background);
 }
 
 input[type="text"]:focus {
@@ -187,7 +192,7 @@ input[type="text"]:focus {
 button {
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: .25rem;
     font-family: 'Geist';
     font-size: 0.875rem;
     color: var(--primary);
@@ -196,9 +201,11 @@ button {
     cursor: pointer;
 }
 
-button.active {
+button.active,
+#settingsButton.active {
     background-color: var(--primary);
     color: var(--background);
+    border-color: var(--primary);
 }
 
 button:hover {
@@ -367,4 +374,13 @@ button:disabled {
 .error {
     color: var(--error);
     font-size: var(--label);
+}
+
+.vh {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+    white-space: nowrap;
 }
