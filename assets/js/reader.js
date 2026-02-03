@@ -404,6 +404,77 @@ function markAsUnread(itemId) {
     renderItems();
 }
 
+async function deleteItem(itemId) {
+    if (!githubConfig) {
+        showStatus('Cannot delete item: GitHub config missing', true);
+        return;
+    }
+    
+    const item = allItems.find(i => i.id === itemId);
+    if (!item) return;
+    
+    if (!confirm(`Permanently delete "${item.title}"? This cannot be undone.`)) return;
+    
+    showStatus('Deleting item...', false);
+    
+    try {
+        const { user, repo, token } = githubConfig;
+        const apiUrl = `https://api.github.com/repos/${user}/${repo}/contents/data/items.json`;
+        
+        // Get current items.json
+        const getResponse = await fetch(apiUrl, {
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+        
+        if (!getResponse.ok) {
+            throw new Error('Failed to fetch items.json');
+        }
+        
+        const fileData = await getResponse.json();
+        const currentItems = JSON.parse(atob(fileData.content));
+        
+        // Remove the item
+        const updatedItems = currentItems.filter(i => i.id !== itemId);
+        
+        // Update items.json
+        const updateResponse = await fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${token}`,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                message: `Delete item: ${item.title}`,
+                content: btoa(JSON.stringify(updatedItems, null, 2)),
+                sha: fileData.sha
+            })
+        });
+        
+        if (!updateResponse.ok) {
+            throw new Error('Failed to update items.json');
+        }
+        
+        // Remove from local state
+        allItems = allItems.filter(i => i.id !== itemId);
+        
+        // Remove from localStorage read items
+        const readItems = getReadItems();
+        readItems.delete(itemId);
+        saveReadItems(readItems);
+        
+        renderItems();
+        showStatus('✓ Item deleted', false);
+        
+    } catch (error) {
+        console.error('Error deleting item:', error);
+        showStatus(`✗ ${error.message}`, true);
+    }
+}
+
 function toggleItem(itemId) {
     const content = document.getElementById(`content-${itemId}`);
     const isCurrentlyExpanded = content.classList.contains('expanded');
@@ -461,7 +532,8 @@ function renderItemList(containerId, items, isArchive) {
                     <div class="item-actions">
                         <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
                         ${isArchive ? 
-                            `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>` :
+                            `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>
+                             <button class="delete-button" data-item-id="${encodedId}" data-action="delete">Delete</button>` :
                             `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>`
                         }
                     </div>
@@ -481,6 +553,14 @@ function renderItemList(containerId, items, isArchive) {
                 markAsUnread(itemId);
             }
         });
+    
+    // Add event listeners for delete buttons
+    container.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemId = decodeURIComponent(this.dataset.itemId);
+            deleteItem(itemId);
+        });
+    });
     });
 }
 
