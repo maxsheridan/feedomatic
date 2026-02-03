@@ -448,7 +448,7 @@ function renderItemList(containerId, items, isArchive) {
     container.innerHTML = items.map((item, index) => {
         const date = new Date(item.pubDate).toLocaleDateString();
         const safeId = `${containerId}-${index}`;
-        const escapedId = item.id.replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/`/g, '\\`');
+        const encodedId = encodeURIComponent(item.id);
         
         return `
             <div class="item">
@@ -461,20 +461,45 @@ function renderItemList(containerId, items, isArchive) {
                     <div class="item-actions">
                         <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
                         ${isArchive ? 
-                            `<button onclick='markAsUnread(\`${escapedId}\`)'>Mark as New</button>` :
-                            `<button onclick='markAsRead(\`${escapedId}\`)'>Mark as Read</button>`
+                            `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>` :
+                            `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>`
                         }
                     </div>
                 </div>
             </div>
         `;
     }).join('');
+    
+    // Add event listeners for mark buttons
+    container.querySelectorAll('.mark-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemId = decodeURIComponent(this.dataset.itemId);
+            const action = this.dataset.action;
+            if (action === 'read') {
+                markAsRead(itemId);
+            } else {
+                markAsUnread(itemId);
+            }
+        });
+    });
+}
+
+function smartQuotes(text) {
+    return text
+        // Replace double quotes
+        .replace(/"([^"]*)"/g, '\u201C$1\u201D')  // Quoted text
+        .replace(/(\W|^)"(\w)/g, '$1\u201C$2')  // Opening quote
+        .replace(/(\w)"(\W|$)/g, '$1\u201D$2')  // Closing quote
+        // Replace single quotes/apostrophes
+        .replace(/(\w)'(\w)/g, '$1\u2019$2')  // Apostrophes within words
+        .replace(/(\s|^)'(\w)/g, '$1\u2018$2')  // Opening single quote
+        .replace(/(\w)'(\s|[,.!?;:]|$)/g, '$1\u2019$2');  // Closing single quote
 }
 
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
-    return div.innerHTML;
+    return smartQuotes(div.innerHTML);
 }
 
 // Initialize
