@@ -43,7 +43,7 @@
     --background: #EAE8E8;
     --surface-background: #F5F5F5;
     --error: #AF1919;
-    --error-reverse: #EF8787; 
+    --error-reverse: #FFDC00; 
     --button-active: blue;
 }
 
@@ -57,7 +57,7 @@
         --background: #1A1A1A;
         --surface-background: #2A2A2A;
         --error: #EF8787;
-        --error-reverse: #AF1919; 
+        --error-reverse: #591D73; 
         --button-active: #7979E4;
     }
 }
@@ -203,7 +203,7 @@ button {
 
 button.active,
 #settingsButton.active {
-    background-color: var(--primary);
+    background-color: var(--accent);
     color: var(--background);
     border-color: var(--primary);
 }
