@@ -372,8 +372,10 @@ button:disabled {
 }
 
 @media (hover:hover) and (pointer:fine) {
-    a:not(.button-link):hover {
+    a:not(.button-link):hover,
+    .item-title:hover  {
     opacity: .6;
+    transition: opacity 0.3s;
     }
     button:not(.active):hover,
     .item-actions .button-link:hover  {
