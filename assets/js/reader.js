@@ -33,6 +33,65 @@ function getGitHubConfig() {
     return config ? JSON.parse(config) : null;
 }
 
+// Poll GitHub Actions workflow status
+async function waitForWorkflowCompletion() {
+    if (!githubConfig) return;
+    
+    const { user, repo, token } = githubConfig;
+    const workflowName = 'Fetch RSS Feeds';
+    
+    try {
+        // Poll every 5 seconds, max 2 minutes
+        let attempts = 0;
+        const maxAttempts = 24;
+        
+        const poll = async () => {
+            attempts++;
+            
+            const response = await fetch(
+                `https://api.github.com/repos/${user}/${repo}/actions/runs?per_page=5`,
+                {
+                    headers: {
+                        'Authorization': `token ${token}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                }
+            );
+            
+            if (!response.ok) return false;
+            
+            const data = await response.json();
+            const recentRun = data.workflow_runs?.find(run => run.name === workflowName);
+            
+            if (!recentRun) return false;
+            
+            if (recentRun.status === 'completed') {
+                if (recentRun.conclusion === 'success') {
+                    showStatus('✓ Feed data updated! Reloading...', false);
+                    setTimeout(() => location.reload(), 1500);
+                    return true;
+                } else {
+                    showStatus('⚠ Workflow completed with issues. Refresh page to check.', true);
+                    return true;
+                }
+            }
+            
+            if (attempts >= maxAttempts) {
+                showStatus('⏱ Still processing... Refresh page manually to check progress.', false);
+                return true;
+            }
+            
+            // Continue polling
+            setTimeout(poll, 5000);
+            return false;
+        };
+        
+        await poll();
+    } catch (error) {
+        console.error('Error polling workflow:', error);
+    }
+}
+
 function saveGitHubConfig() {
     const user = document.getElementById('githubUser').value.trim();
     const repo = document.getElementById('githubRepo').value.trim();
@@ -161,11 +220,14 @@ async function addFeed() {
         }
         
         input.value = '';
-        showStatus('✓ Feed added! GitHub Actions will fetch items within an hour. Refresh this page in a few minutes.', false);
         
         // Update local state
         allFeeds.push(url);
         renderFeeds();
+        
+        // Show status and start polling
+        showStatus('✓ Feed added! Waiting for GitHub to fetch items...', false);
+        setTimeout(() => waitForWorkflowCompletion(), 3000);
         
     } catch (error) {
         console.error('Error adding feed:', error);
@@ -223,8 +285,6 @@ async function removeFeed(url) {
             throw new Error('Failed to update feeds.json');
         }
         
-        showStatus('✓ Feed removed!', false);
-        
         // Update local state
         allFeeds = allFeeds.filter(f => f !== url);
         
@@ -234,6 +294,10 @@ async function removeFeed(url) {
         
         renderFeeds();
         renderItems();
+        
+        // Show status and start polling
+        showStatus('✓ Feed removed! Updating data...', false);
+        setTimeout(() => waitForWorkflowCompletion(), 3000);
         
     } catch (error) {
         console.error('Error removing feed:', error);
@@ -256,14 +320,16 @@ function selectFeed(feedUrl) {
     renderItems();
 }
 
-function showStatus(message, isError) {
+function showStatus(message, isError, persist = false) {
     const status = document.getElementById('feedStatus');
     status.textContent = message;
     status.className = isError ? 'error' : 'loading';
     
-    setTimeout(() => {
-        status.textContent = '';
-    }, isError ? 10000 : 5000);
+    if (!persist) {
+        setTimeout(() => {
+            status.textContent = '';
+        }, isError ? 10000 : 5000);
+    }
 }
 
 function updateLastUpdatedDisplay() {
