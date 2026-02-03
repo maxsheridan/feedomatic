@@ -318,7 +318,7 @@ button:disabled {
 
 .item-content {
     display: none;
-    padding: var(--space--1);
+    padding: var(--space-1) var(--space--1);
 }
 
 .item-content.expanded {
