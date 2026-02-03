@@ -213,6 +213,7 @@ button:disabled {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-block-end: var(--space-0);
 }
 
 .feed-list {
@@ -330,26 +331,19 @@ button:disabled {
     outline-offset: 2px;
 }
 
-.empty-state {
+.empty-state,
+.last-updated,
+.loading,
+.status {
     font-size: var(--label);
     color: var(--accent);
 }
 
 .last-updated {
-    font-size: 12px;
-    color: var(--accent);
-}
-
-.loading {
-    color: var(--accent);
-    font-size: 14px;
+    margin-block-start: var(--space--1);
 }
 
 .error {
     color: var(--error);
-    font-size: var(--label);
-}
-
-.status {
     font-size: var(--label);
 }

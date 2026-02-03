@@ -99,9 +99,18 @@ return items;
 }
 
 async function fetchAllFeeds() {
-const allItems = [...existingItems];
-const existingIds = new Set(existingItems.map(item => item.id));
+// Get current feed URLs as a Set for fast lookup
+const currentFeeds = new Set(feeds);
+
+// Filter existing items to only keep those from current feeds
+const allItems = existingItems.filter(item => currentFeeds.has(item.feedUrl));
+const existingIds = new Set(allItems.map(item => item.id));
 let newCount = 0;
+const removedCount = existingItems.length - allItems.length;
+
+if (removedCount > 0) {
+console.log(`Removed ${removedCount} items from deleted feeds`);
+}
 
 for (const feedUrl of feeds) {
 try {

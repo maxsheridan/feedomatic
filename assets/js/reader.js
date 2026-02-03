@@ -241,7 +241,7 @@ async function removeFeed(url) {
         return;
     }
     
-    if (!confirm(`Remove feed "${getFeedName(url)}"? Items will remain in your archive.`)) return;
+    if (!confirm(`Remove feed "${getFeedName(url)}"? All items from this feed will be deleted.`)) return;
     
     showStatus('Removing feed...', false);
     
