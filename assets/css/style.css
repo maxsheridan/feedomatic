@@ -112,7 +112,7 @@ a {
 }
 
 @media (hover:hover) and (pointer:fine) {
-    a:hover {
+    a:not(.button-link):hover {
     opacity: .6;
     }
 }
@@ -237,7 +237,7 @@ button:disabled {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: var(--space--1);
     background-color: var(--surface-background);
     cursor: pointer;
 }
@@ -264,8 +264,7 @@ button:disabled {
 
 .item-content {
     display: none;
-    padding: 15px;
-    border-top: 1px solid var(--border);
+    padding: var(--space--1);
 }
 
 .item-content.expanded {
@@ -273,19 +272,43 @@ button:disabled {
 }
 
 .item-description {
-    color: var(--accent);
+    color: var(--primary);
 }
 
 .item-actions {
     display: flex;
-    gap: .75rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
+    gap: 1rem;
+    margin-block-start: var(--space-0);
 }
 
-.item-actions button {
+.item-actions button,
+.item-actions .button-link {
     font-size: 13px;
     padding: 8px 16px;
+}
+
+.item-actions .button-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: 'Geist';
+    font-size: 0.875rem;
+    color: var(--primary);
+    background-color: var(--surface-background);
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.item-actions .button-link:hover {
+    border: 1px solid var(--accent);
+    transition: border 0.3s, color 0.3s;
+}
+
+.item-actions .button-link:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 .item-actions a {

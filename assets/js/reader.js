@@ -406,7 +406,17 @@ function markAsUnread(itemId) {
 
 function toggleItem(itemId) {
     const content = document.getElementById(`content-${itemId}`);
-    content.classList.toggle('expanded');
+    const isCurrentlyExpanded = content.classList.contains('expanded');
+    
+    // Close all other expanded items
+    document.querySelectorAll('.item-content.expanded').forEach(item => {
+        item.classList.remove('expanded');
+    });
+    
+    // Toggle the clicked item (if it was closed, open it; if it was open, it stays closed)
+    if (!isCurrentlyExpanded) {
+        content.classList.add('expanded');
+    }
 }
 
 function renderItems() {
@@ -435,9 +445,9 @@ function renderItemList(containerId, items, isArchive) {
         return;
     }
     
-    container.innerHTML = items.map(item => {
+    container.innerHTML = items.map((item, index) => {
         const date = new Date(item.pubDate).toLocaleDateString();
-        const safeId = btoa(encodeURIComponent(item.id)).replace(/[^a-zA-Z0-9]/g, '_').substring(0, 50);
+        const safeId = `${containerId}-${index}`;
         const escapedId = item.id.replace(/'/g, "\\'").replace(/"/g, '\\"').replace(/`/g, '\\`');
         
         return `
@@ -449,7 +459,7 @@ function renderItemList(containerId, items, isArchive) {
                 <div class="item-content" id="content-${safeId}">
                     <div class="item-description">${escapeHtml(item.description)}</div>
                     <div class="item-actions">
-                        <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Read Full Article</a>
+                        <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
                         ${isArchive ? 
                             `<button onclick='markAsUnread(\`${escapedId}\`)'>Mark as New</button>` :
                             `<button onclick='markAsRead(\`${escapedId}\`)'>Mark as Read</button>`
