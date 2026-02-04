@@ -479,7 +479,7 @@ button.batch-delete {
 }
 
 .logo span {
-    padding: 0 .25rem;
+    padding: 0 .5rem;
     border-radius: var(--radius);
     color: #591D73;
     background: #FFDC00;
