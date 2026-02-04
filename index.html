@@ -52,6 +52,35 @@
                 </form>
             </div>
         </section>
+        <section class="setup hidden" id="supabaseSection">
+            <div class="setup-inner">
+                <div>
+                    <h3>Supabase Sync Settings</h3>
+                    <p>
+                        Optional: Sync your favorites and archived items across devices using Supabase (free). <a href="SUPABASE_SETUP.md" target="_blank">Setup instructions</a>
+                    </p>
+                </div>
+                <form id="supabaseForm">
+                    <div>
+                        <label for="supabaseUrl">Project URL:</label>
+                        <input type="url" id="supabaseUrl" name="supabaseUrl" placeholder="https://xxxxx.supabase.co" required>
+                    </div>
+                    <div>
+                        <label for="supabaseKey">Anon Public Key:</label>
+                        <input type="password" id="supabaseKey" name="supabaseKey" placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." required>
+                    </div>
+                    <div>
+                        <label for="supabaseUserId">User ID:</label>
+                        <input type="text" id="supabaseUserId" name="supabaseUserId" placeholder="your-email@example.com" required>
+                        <p class="after-field">
+                            Use the same User ID on all devices to sync data.
+                        </p>
+                    </div>
+                    <button type="submit" aria-label="Save Supabase configuration">Save Sync Settings</button>
+                    <button type="button" onclick="clearSupabaseConfig()" class="secondary" aria-label="Clear Supabase configuration">Clear Settings</button>
+                </form>
+            </div>
+        </section>
         <section class="add-feed">
             <h2 class="vh">Add Feed</h2>
             <div class="input-group">
@@ -60,6 +89,7 @@
             <div class="controls">
                 <button onclick="addFeed()" aria-label="Add RSS feed">Add Feed</button>
                 <button id="settingsButton" onclick="toggleSettings()" aria-label="Toggle GitHub configuration settings">Settings</button>
+                <button id="syncButton" onclick="toggleSyncSettings()" aria-label="Toggle Supabase sync settings">Sync</button>
             </div>
             <div class="status" id="feedStatus"></div>
         </section>

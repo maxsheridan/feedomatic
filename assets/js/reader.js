@@ -306,6 +306,14 @@ function toggleSettings() {
     const settingsButton = document.getElementById('settingsButton');
     const isHidden = setupSection.classList.contains('hidden');
     
+    // Close Supabase settings if open
+    const supabaseSection = document.getElementById('supabaseSection');
+    if (supabaseSection && !supabaseSection.classList.contains('hidden')) {
+        supabaseSection.classList.add('hidden');
+        const syncButton = document.getElementById('syncButton');
+        if (syncButton) syncButton.classList.remove('active');
+    }
+    
     if (isHidden) {
         // Opening settings
         updateSetupUI(true);
@@ -324,6 +332,52 @@ function toggleSettings() {
         // Closing settings
         setupSection.classList.add('hidden');
         settingsButton.classList.remove('active');
+    }
+}
+
+function toggleSyncSettings() {
+    const supabaseSection = document.getElementById('supabaseSection');
+    const syncButton = document.getElementById('syncButton');
+    const isHidden = supabaseSection.classList.contains('hidden');
+    
+    // Close GitHub settings if open
+    const setupSection = document.getElementById('setupSection');
+    if (setupSection && !setupSection.classList.contains('hidden')) {
+        setupSection.classList.add('hidden');
+        const settingsButton = document.getElementById('settingsButton');
+        if (settingsButton) settingsButton.classList.remove('active');
+    }
+    
+    if (isHidden) {
+        // Pre-fill form with existing values
+        const config = getSupabaseConfig();
+        if (config) {
+            document.getElementById('supabaseUrl').value = config.url || '';
+            document.getElementById('supabaseKey').value = config.key || '';
+            document.getElementById('supabaseUserId').value = config.userId || '';
+        }
+        
+        supabaseSection.classList.remove('hidden');
+        syncButton.classList.add('active');
+        supabaseSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // Closing settings
+        supabaseSection.classList.add('hidden');
+        syncButton.classList.remove('active');
+    }
+}
+
+function clearSupabaseConfig() {
+    if (confirm('This will clear your Supabase sync settings. Your local data will remain. Continue?')) {
+        localStorage.removeItem(SUPABASE_CONFIG_KEY);
+        supabaseClient = null;
+        supabaseUserId = null;
+        
+        document.getElementById('supabaseUrl').value = '';
+        document.getElementById('supabaseKey').value = '';
+        document.getElementById('supabaseUserId').value = '';
+        
+        alert('Sync settings cleared. Sync is now disabled.');
     }
 }
 
@@ -1001,6 +1055,29 @@ function initEventListeners() {
     const setupForm = document.getElementById('setupForm');
     if (setupForm) {
         setupForm.addEventListener('submit', saveGitHubConfig);
+    }
+    
+    // Supabase form submission
+    const supabaseForm = document.getElementById('supabaseForm');
+    if (supabaseForm) {
+        supabaseForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const url = document.getElementById('supabaseUrl').value.trim();
+            const key = document.getElementById('supabaseKey').value.trim();
+            const userId = document.getElementById('supabaseUserId').value.trim();
+            
+            if (url && key && userId) {
+                saveSupabaseConfig(url, key, userId);
+                
+                // Initialize Supabase with new config
+                if (initSupabase()) {
+                    alert('Sync settings saved! Reloading to sync data...');
+                    location.reload();
+                } else {
+                    alert('Settings saved, but failed to connect to Supabase. Check your credentials.');
+                }
+            }
+        });
     }
     
     // Add feed button

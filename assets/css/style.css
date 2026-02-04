@@ -130,6 +130,17 @@ button.active {
     background-color: var(--accent);
 }
 
+button.secondary {
+    color: var(--secondary);
+    background-color: transparent;
+    border-color: var(--secondary);
+    opacity: 0.7;
+}
+
+button.secondary:hover {
+    opacity: 1;
+}
+
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
