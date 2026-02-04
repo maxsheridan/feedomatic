@@ -147,6 +147,11 @@ button:disabled {
     cursor: not-allowed;
 } 
 
+.controls button,
+.item-actions button {
+    min-width: 130px;
+}
+
 hr {
     border-top: 1px solid var(--border);
 }
