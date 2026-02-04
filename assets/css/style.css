@@ -75,9 +75,9 @@ html:focus-within {
 }
 
 body {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 0 1rem var(--space-2);
+    padding: var(--space-2) 1rem;
     font-family: var(--body);
     font-weight: 425;
     line-height: 1.6;
@@ -85,18 +85,17 @@ body {
     background-color: var(--background);
 }
 
-main > * + * {
-    margin-block-start: var(--space-2);
-}
-
 svg.site-title {
     margin-block-end: -.5rem; /* Removes extra space */
+}
+
+section + section {
+    margin-block-start: var(--space-2);
 }
 
 section > div {
     margin-block-start: var(--space-0);
 }
-
 
 h1,
 h2 {
@@ -145,18 +144,17 @@ hr {
 .setup {
     display: grid;
     grid-template-rows: 1fr;
-    transition: grid-template-rows 0.3s ease;
     padding: var(--space--1);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: var(--surface-background);
+    transition: grid-template-rows 0.3s ease;
 }
 
 .setup.hidden {
     grid-template-rows: 0fr;
-    padding-top: 0;
-    padding-bottom: 0;
-    border-width: 0;
+    padding: 0;
+    border: none;
 }
 
 .setup-inner {
