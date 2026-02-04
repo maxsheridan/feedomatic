@@ -2,6 +2,8 @@
 const READ_ITEMS_KEY = 'rss_read_items';
 const SELECTED_FEED_KEY = 'rss_selected_feed';
 const GITHUB_CONFIG_KEY = 'rss_github_config';
+const FAVORITES_KEY = 'rss_favorites';
+const COLLAPSED_SECTIONS_KEY = 'rss_collapsed_sections';
 
 // GitHub config
 let githubConfig = null;
@@ -34,6 +36,53 @@ function setSelectedFeed(feedUrl) {
 function getGitHubConfig() {
     const config = localStorage.getItem(GITHUB_CONFIG_KEY);
     return config ? JSON.parse(config) : null;
+}
+
+function getFavorites() {
+    return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]'));
+}
+
+function saveFavorites(favorites) {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+}
+
+function getCollapsedSections() {
+    return new Set(JSON.parse(localStorage.getItem(COLLAPSED_SECTIONS_KEY) || '["archive", "favorites"]'));
+}
+
+function saveCollapsedSections(sections) {
+    localStorage.setItem(COLLAPSED_SECTIONS_KEY, JSON.stringify([...sections]));
+}
+
+function toggleSection(sectionName) {
+    const content = document.getElementById(`${sectionName}Items`);
+    const caret = document.getElementById(`${sectionName}Caret`);
+    const collapsedSections = getCollapsedSections();
+    
+    if (collapsedSections.has(sectionName)) {
+        collapsedSections.delete(sectionName);
+        content.classList.remove('collapsed');
+        if (caret) caret.style.transform = 'rotate(-180deg)';
+    } else {
+        collapsedSections.add(sectionName);
+        content.classList.add('collapsed');
+        if (caret) caret.style.transform = 'rotate(0deg)';
+    }
+    
+    saveCollapsedSections(collapsedSections);
+}
+
+function toggleFavorite(itemId) {
+    const favorites = getFavorites();
+    
+    if (favorites.has(itemId)) {
+        favorites.delete(itemId);
+    } else {
+        favorites.add(itemId);
+    }
+    
+    saveFavorites(favorites);
+    renderItems();
 }
 
 // Poll GitHub Actions workflow status
@@ -650,6 +699,7 @@ async function batchDeleteItems() {
 
 function renderItems() {
     const selectedFeed = getSelectedFeed();
+    const favorites = getFavorites();
     let items = allItems;
     
     // Filter by selected feed
@@ -657,27 +707,48 @@ function renderItems() {
         items = items.filter(item => item.feedUrl === selectedFeed);
     }
     
-    const newItems = items.filter(item => !item.read)
+    const newItems = items.filter(item => !item.read && !favorites.has(item.id))
         .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-    const archiveItems = items.filter(item => item.read)
+    const favoriteItems = items.filter(item => favorites.has(item.id))
+        .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+    const archiveItems = items.filter(item => item.read && !favorites.has(item.id))
         .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
     
-    renderItemList('newItems', newItems, false);
-    renderItemList('archiveItems', archiveItems, true);
+    renderItemList('newItems', newItems, false, false);
+    renderItemList('favoritesItems', favoriteItems, false, true);
+    renderItemList('archiveItems', archiveItems, true, false);
+    
+    // Update collapsed state on render
+    const collapsedSections = getCollapsedSections();
+    ['archive', 'favorites'].forEach(section => {
+        const content = document.getElementById(`${section}Items`);
+        const caret = document.getElementById(`${section}Caret`);
+        if (content && caret) {
+            if (collapsedSections.has(section)) {
+                content.classList.add('collapsed');
+                caret.style.transform = 'rotate(0deg)';
+            } else {
+                content.classList.remove('collapsed');
+                caret.style.transform = 'rotate(-180deg)';
+            }
+        }
+    });
 }
 
-function renderItemList(containerId, items, isArchive) {
+function renderItemList(containerId, items, isArchive, isFavorites) {
     const container = document.getElementById(containerId);
+    const favorites = getFavorites();
     
     if (items.length === 0) {
-        container.innerHTML = '<div class="empty-state">No items</div>';
+        container.innerHTML = '<div class="section-inner"><div class="empty-state">No items</div></div>';
         return;
     }
     
-    container.innerHTML = items.map((item, index) => {
+    const itemsHtml = items.map((item, index) => {
         const date = new Date(item.pubDate).toLocaleDateString();
         const safeId = `${containerId}-${index}`;
         const encodedId = encodeURIComponent(item.id);
+        const isFavorited = favorites.has(item.id);
         
         return `
             <div class="item">
@@ -687,19 +758,25 @@ function renderItemList(containerId, items, isArchive) {
                     <div class="item-meta" data-toggle-id="${safeId}" data-is-archive="${isArchive}">${date}</div>
                 </div>
                 <div class="item-content" id="content-${safeId}">
-                    <div class="item-description">${escapeHtml(item.description)}</div>
-                    <div class="item-actions">
-                        <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
-                        ${isArchive ? 
-                            `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>
-                             <button class="delete-button" data-item-id="${encodedId}" data-action="delete">Delete</button>` :
-                            `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>`
-                        }
+                    <div class="item-inner">
+                        <div class="item-description">${escapeHtml(item.description)}</div>
+                        <div class="item-actions">
+                            <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
+                            ${isArchive ? 
+                                `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>
+                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Remove from Favorites' : 'Add to Favorites'}</button>
+                                <button class="delete-button" data-item-id="${encodedId}" data-action="delete">Delete</button>` :
+                                `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>
+                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Remove from Favorites' : 'Add to Favorites'}</button>`
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
         `;
     }).join('');
+    
+    container.innerHTML = `<div class="section-inner">${itemsHtml}</div>`;
     
     // Add event listeners for mark buttons
     container.querySelectorAll('.mark-button').forEach(button => {
@@ -719,6 +796,14 @@ function renderItemList(containerId, items, isArchive) {
         button.addEventListener('click', function() {
             const itemId = decodeURIComponent(this.dataset.itemId);
             deleteItem(itemId);
+        });
+    });
+    
+    // Add event listeners for favorite buttons
+    container.querySelectorAll('.favorite-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const itemId = decodeURIComponent(this.dataset.itemId);
+            toggleFavorite(itemId);
         });
     });
     

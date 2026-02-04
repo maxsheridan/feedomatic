@@ -114,28 +114,62 @@ a {
     color: var(--accent);
 }
 
+button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'Geist';
+    font-size: var(--label);
+    color: var(--primary);
+    background-color: var(--surface-background);
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+button.active {
+    color: var(--background);
+    background-color: var(--accent);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+} 
+
 hr {
     border-top: 1px solid var(--border);
 }
 
+/* Section UI */
+
 .setup {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s ease;
     padding: var(--space--1);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: var(--surface-background);
 }
 
-.setup > * + *, 
+.setup.hidden {
+    grid-template-rows: 0fr;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+}
+
+.setup-inner {
+    overflow: hidden;
+}
+
+.setup-inner > * + *, 
 #setupForm > * + * {
     margin-block-start: var(--space-1);
 }
 
 #setupForm > div * + * {
     margin-block-start: var(--space--1);
-}
-
-.setup.hidden {
-    display: none;
 }
 
 .setup label {
@@ -181,35 +215,6 @@ input[type="text"]:focus {
     border-color: var(--accent);
 }
 
-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    font-family: 'Geist';
-    font-size: var(--label);
-    color: var(--primary);
-    background-color: var(--surface-background);
-    transition: opacity 0.2s;
-    cursor: pointer;
-}
-
-button.active {
-    color: var(--background);
-    background-color: var(--accent);
-}
-
-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-} 
-
-.feeds-header,
-.archive-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .feed-list {
     display: flex;
     flex-wrap: wrap;
@@ -248,6 +253,41 @@ button:disabled {
 
 .feed-button.active .remove {
     color: var(--error-reverse);
+}
+
+.collapsible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.section-title-wrapper {
+    cursor: pointer;
+}
+
+.caret {
+    display: inline-block;
+    width: 0.75em;
+    height: 0.75em;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+
+.section-content {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.section-content.collapsed {
+    grid-template-rows: 0fr;
+}
+
+.section-inner {
+    overflow: hidden;
 }
 
 .item {
@@ -310,27 +350,34 @@ button:disabled {
     cursor: pointer;
 }
 
-.item-meta {
-    font-family: var(--mono);
-    font-size: var(--label);
-    color: var(--accent);
-}
-
 .item-content {
-    display: none;
-    padding: var(--space-1) var(--space--1);
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
 }
 
 .item-content.expanded {
-    display: block;
+    grid-template-rows: 1fr;
+}
+
+.item-inner {
+    overflow: hidden;
+    padding: var(--space-1) var(--space--1);
 }
 
 .item-description {
     color: var(--primary);
 }
 
+.item-meta {
+    font-family: var(--mono);
+    font-size: var(--label);
+    color: var(--accent);
+}
+
 .item-actions {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-block-start: var(--space-0);
 }
@@ -339,6 +386,10 @@ button:disabled {
 .item-actions .button-link {
     font-size: var(--label);
     padding: .5rem 1rem;
+}
+
+button.batch-delete {
+    font-size: var(--label);
 }
 
 .item-actions .button-link {
@@ -354,6 +405,7 @@ button:disabled {
     transition: opacity 0.2s;
     cursor: pointer;
 }
+
 .item-header:focus, 
 .item-actions .button-link:focus,
 .item-actions a:focus {
@@ -370,6 +422,8 @@ button:disabled {
     color: var(--accent);
     background-color: var(--surface-background);
 }
+
+/* Extras */
 
 @media (hover:hover) and (pointer:fine) {
     a:not(.button-link):hover,

@@ -25,30 +25,32 @@
             </g>
         </svg>
         <section class="setup" id="setupSection">
-            <div>
-                <h3 id="setupTitle">Initial Setup Required</h3>
-                <p id="setupDescription">
-                    To add feeds via the UI, add your GitHub details here (stored in browser only):
-                </p>
-            </div>
-            <form id="setupForm">
+            <div class="setup-inner">
                 <div>
-                    <label for="githubUser">GitHub Username:</label>
-                    <input type="text" id="githubUser" name="githubUser" placeholder="your-username" required>
-                </div>
-                <div>
-                    <label for="githubRepo">Repository Name:</label>
-                    <input type="text" id="githubRepo" name="githubRepo" placeholder="repo-name" required>
-                </div>
-                <div>
-                    <label for="githubToken">Personal Access Token:</label>
-                    <input type="password" id="githubToken" name="githubToken" placeholder="ghp_xxxxxxxxxxxxx" required>
-                    <p class="after-field">
-                        Create a token at <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> with <code class="mono">repo</code> scope.
+                    <h3 id="setupTitle">Initial Setup Required</h3>
+                    <p id="setupDescription">
+                        To add feeds via the UI, add your GitHub details here (stored in browser only):
                     </p>
                 </div>
-                <button type="submit" aria-label="Save GitHub configuration">Save Configuration</button>
-            </form>
+                <form id="setupForm">
+                    <div>
+                        <label for="githubUser">GitHub Username:</label>
+                        <input type="text" id="githubUser" name="githubUser" placeholder="your-username" required>
+                    </div>
+                    <div>
+                        <label for="githubRepo">Repository Name:</label>
+                        <input type="text" id="githubRepo" name="githubRepo" placeholder="repo-name" required>
+                    </div>
+                    <div>
+                        <label for="githubToken">Personal Access Token:</label>
+                        <input type="password" id="githubToken" name="githubToken" placeholder="ghp_xxxxxxxxxxxxx" required>
+                        <p class="after-field">
+                            Create a token at <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> with <code class="mono">repo</code> scope.
+                        </p>
+                    </div>
+                    <button type="submit" aria-label="Save GitHub configuration">Save Configuration</button>
+                </form>
+            </div>
         </section>
         <section class="add-feed">
             <h2 class="vh">Add Feed</h2>
@@ -62,9 +64,7 @@
             <div class="status" id="feedStatus"></div>
         </section>
         <section class="feeds">
-            <div class="feeds-header">
-                <h2 class="section-title">Feeds</h2>
-            </div>
+            <h2 class="section-title">Feeds</h2>
             <div class="feed-list" id="feedList"></div>
             <div class="last-updated" id="lastUpdated"></div>
         </section>
@@ -73,11 +73,21 @@
             <div id="newItems"></div>
         </section>
         <section class="view">
-            <div class="archive-header">
-                <h2 class="section-title">Archive</h2>
-                <button id="batchDeleteButton" onclick="batchDeleteItems()" style="display: none;" aria-label="Delete selected archived items">Delete Selected</button>
+            <div class="collapsible">
+                <div class="section-title-wrapper" onclick="toggleSection('favorites')">
+                    <h2 class="section-title">Favorites <svg class="caret" id="favoritesCaret" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline points="2,5 8,11 14,5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></h2>
+                </div>
             </div>
-            <div id="archiveItems"></div>
+            <div id="favoritesItems" class="section-content collapsed"></div>
+        </section>
+        <section class="view">
+            <div class="collapsible">
+                <div class="section-title-wrapper" onclick="toggleSection('archive')">
+                    <h2 class="section-title">Archive <svg class="caret" id="archiveCaret" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><polyline points="2,5 8,11 14,5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></h2>
+                </div>
+                <button id="batchDeleteButton" class="batch-delete" onclick="batchDeleteItems()" aria-label="Delete selected archived items">Delete Selected</button>
+            </div>
+            <div id="archiveItems" class="section-content collapsed"></div>
         </section>
     </main>
     <footer>
