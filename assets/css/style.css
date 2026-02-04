@@ -168,11 +168,11 @@ hr {
 }
 
 .setup-inner > * + *, 
-#setupForm > * + * {
+form > * + * {
     margin-block-start: var(--space-1);
 }
 
-#setupForm > div * + * {
+form > div * + * {
     margin-block-start: var(--space--1);
 }
 
@@ -183,7 +183,8 @@ hr {
 }
 
 .setup input[type="text"],
-.setup input[type="password"] {
+.setup input[type="password"],
+.setup input[type="url"] {
     width: 100%;
     padding: var(--space--1);
     border: 1px solid var(--border);
@@ -203,7 +204,8 @@ hr {
     gap: 1rem;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="url"] {
     flex: 1;
     padding: var(--space--1);
     border: 1px solid var(--border);
@@ -213,7 +215,8 @@ input[type="text"] {
     background-color: var(--surface-background);
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus,
+input[type="url"]:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
     border-color: var(--accent);
