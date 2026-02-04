@@ -452,7 +452,9 @@ async function loadData() {
     } catch (error) {
         console.error('Error loading data:', error);
         document.getElementById('feedList').innerHTML = 
-            '<div class="empty-state">Loading feeds... If this persists, make sure GitHub Actions has run at least once.</div>';
+            '<div class="empty-state">Error loading feeds. Make sure GitHub Actions has run at least once.</div>';
+        document.getElementById('newItems').innerHTML = 
+            '<div class="section-inner"><div class="empty-state">Error loading items.</div></div>';
     }
 }
 
