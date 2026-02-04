@@ -4,6 +4,11 @@ const SELECTED_FEED_KEY = 'rss_selected_feed';
 const GITHUB_CONFIG_KEY = 'rss_github_config';
 const FAVORITES_KEY = 'rss_favorites';
 const COLLAPSED_SECTIONS_KEY = 'rss_collapsed_sections';
+const SUPABASE_CONFIG_KEY = 'rss_supabase_config';
+
+// Supabase configuration
+let supabaseClient = null;
+let supabaseUserId = null;
 
 // GitHub config
 let githubConfig = null;
@@ -12,6 +17,121 @@ let githubConfig = null;
 let allFeeds = [];
 let allItems = [];
 let metadata = {};
+
+// Initialize Supabase
+function initSupabase() {
+    const config = getSupabaseConfig();
+    if (config && config.url && config.key) {
+        try {
+            supabaseClient = supabase.createClient(config.url, config.key);
+            supabaseUserId = config.userId || 'default';
+            return true;
+        } catch (error) {
+            console.error('Failed to initialize Supabase:', error);
+            return false;
+        }
+    }
+    return false;
+}
+
+function getSupabaseConfig() {
+    const config = localStorage.getItem(SUPABASE_CONFIG_KEY);
+    return config ? JSON.parse(config) : null;
+}
+
+function saveSupabaseConfig(url, key, userId = 'default') {
+    localStorage.setItem(SUPABASE_CONFIG_KEY, JSON.stringify({ url, key, userId }));
+}
+
+// Sync favorites to Supabase
+async function syncFavoritesToSupabase(favorites) {
+    if (!supabaseClient) return;
+    
+    try {
+        const { error } = await supabaseClient
+            .from('user_data')
+            .upsert({
+                user_id: supabaseUserId,
+                data_type: 'favorites',
+                data: [...favorites],
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'user_id,data_type' });
+        
+        if (error) console.error('Failed to sync favorites:', error);
+    } catch (error) {
+        console.error('Error syncing favorites:', error);
+    }
+}
+
+// Sync archived items to Supabase
+async function syncArchivedToSupabase(readItems) {
+    if (!supabaseClient) return;
+    
+    try {
+        const { error } = await supabaseClient
+            .from('user_data')
+            .upsert({
+                user_id: supabaseUserId,
+                data_type: 'archived',
+                data: [...readItems],
+                updated_at: new Date().toISOString()
+            }, { onConflict: 'user_id,data_type' });
+        
+        if (error) console.error('Failed to sync archived items:', error);
+    } catch (error) {
+        console.error('Error syncing archived items:', error);
+    }
+}
+
+// Load favorites from Supabase
+async function loadFavoritesFromSupabase() {
+    if (!supabaseClient) return null;
+    
+    try {
+        const { data, error } = await supabaseClient
+            .from('user_data')
+            .select('data')
+            .eq('user_id', supabaseUserId)
+            .eq('data_type', 'favorites')
+            .single();
+        
+        if (error) {
+            if (error.code !== 'PGRST116') { // Not found error
+                console.error('Failed to load favorites:', error);
+            }
+            return null;
+        }
+        return data ? new Set(data.data) : null;
+    } catch (error) {
+        console.error('Error loading favorites:', error);
+        return null;
+    }
+}
+
+// Load archived items from Supabase
+async function loadArchivedFromSupabase() {
+    if (!supabaseClient) return null;
+    
+    try {
+        const { data, error } = await supabaseClient
+            .from('user_data')
+            .select('data')
+            .eq('user_id', supabaseUserId)
+            .eq('data_type', 'archived')
+            .single();
+        
+        if (error) {
+            if (error.code !== 'PGRST116') { // Not found error
+                console.error('Failed to load archived items:', error);
+            }
+            return null;
+        }
+        return data ? new Set(data.data) : null;
+    } catch (error) {
+        console.error('Error loading archived items:', error);
+        return null;
+    }
+}
 
 // Selection state for batch operations
 let selectedItems = new Set();
@@ -23,6 +143,7 @@ function getReadItems() {
 
 function saveReadItems(readItems) {
     localStorage.setItem(READ_ITEMS_KEY, JSON.stringify([...readItems]));
+    syncArchivedToSupabase(readItems);
 }
 
 function getSelectedFeed() {
@@ -44,6 +165,7 @@ function getFavorites() {
 
 function saveFavorites(favorites) {
     localStorage.setItem(FAVORITES_KEY, JSON.stringify([...favorites]));
+    syncFavoritesToSupabase(favorites);
 }
 
 function getCollapsedSections() {
@@ -221,6 +343,34 @@ function updateSetupUI(isEditing) {
 // Load data from GitHub
 async function loadData() {
     try {
+        // Initialize Supabase if configured
+        initSupabase();
+        
+        // Load from Supabase if available, otherwise use localStorage
+        let readItems, favorites;
+        
+        if (supabaseClient) {
+            const [supabaseArchived, supabaseFavorites] = await Promise.all([
+                loadArchivedFromSupabase(),
+                loadFavoritesFromSupabase()
+            ]);
+            
+            // Merge Supabase data with localStorage, preferring Supabase
+            readItems = supabaseArchived || getReadItems();
+            favorites = supabaseFavorites || getFavorites();
+            
+            // Update localStorage with Supabase data
+            if (supabaseArchived) {
+                localStorage.setItem(READ_ITEMS_KEY, JSON.stringify([...supabaseArchived]));
+            }
+            if (supabaseFavorites) {
+                localStorage.setItem(FAVORITES_KEY, JSON.stringify([...supabaseFavorites]));
+            }
+        } else {
+            readItems = getReadItems();
+            favorites = getFavorites();
+        }
+        
         // Load feeds
         const feedsResponse = await fetch('feeds.json?' + Date.now());
         allFeeds = await feedsResponse.json();
@@ -237,8 +387,7 @@ async function loadData() {
             metadata = {};
         }
         
-        // Mark items as read based on localStorage
-        const readItems = getReadItems();
+        // Mark items as read based on loaded data
         allItems.forEach(item => {
             item.read = readItems.has(item.id);
         });
