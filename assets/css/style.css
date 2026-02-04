@@ -114,11 +114,12 @@ a {
 }
 
 button {
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     font-family: 'Geist';
     font-size: var(--label);
+    line-height: 1.4;
     color: var(--primary);
     background-color: var(--surface-background);
     transition: opacity 0.2s;
@@ -389,23 +390,18 @@ input[type="url"]:focus {
     margin-block-start: var(--space-0);
 }
 
-.item-actions button,
-.item-actions .button-link {
-    font-size: var(--label);
-    padding: .5rem 1rem;
-}
-
 button.batch-delete {
     font-size: var(--label);
 }
 
 .item-actions .button-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     font-family: 'Geist';
     font-size: var(--label);
+    line-height: 1.4;
     text-decoration: none;
     color: var(--primary);
     background-color: var(--surface-background);
