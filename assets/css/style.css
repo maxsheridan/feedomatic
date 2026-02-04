@@ -144,7 +144,8 @@ hr {
 .setup {
     display: grid;
     grid-template-rows: 1fr;
-    padding: var(--space--1);
+    margin-block-start: var(--space-2);
+    padding: var(--space-0);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     background-color: var(--surface-background);
@@ -152,13 +153,7 @@ hr {
 }
 
 .setup.hidden {
-    grid-template-rows: 0fr;
-    padding: 0;
-    border: none;
-}
-
-.setup-inner {
-    overflow: hidden;
+    display: none;
 }
 
 .setup-inner > * + *, 
