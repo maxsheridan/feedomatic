@@ -83,6 +83,7 @@ body {
     line-height: 1.6;
     color: var(--primary);
     background-color: var(--background);
+    touch-action: pan-y;
 }
 
 svg.site-title {
