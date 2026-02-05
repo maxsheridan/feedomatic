@@ -381,11 +381,12 @@ input[type="url"]:focus {
 }
 
 .item-inner {
+    min-height: 0;
     overflow: hidden;
-    padding: var(--space-1) var(--space--1);
 }
 
 .item-description {
+    padding: var(--space-1) var(--space--1) 0 var(--space--1);
     color: var(--primary);
 }
 
@@ -399,7 +400,7 @@ input[type="url"]:focus {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-block-start: var(--space-0);
+    padding: var(--space-0) var(--space--1) var(--space-1);
 }
 
 button.batch-delete {
