@@ -314,9 +314,6 @@ input[type="url"]:focus {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
-}
-
-.item * {
     touch-action: pan-y;
 }
 
@@ -331,6 +328,7 @@ input[type="url"]:focus {
     padding: var(--space--1);
     background-color: var(--surface-background);
     cursor: pointer;
+    touch-action: pan-y;
 }
 
 .item-checkbox {
@@ -344,6 +342,7 @@ input[type="url"]:focus {
     border-radius: 2px;
     background-color: var(--surface-background);
     cursor: pointer;
+    touch-action: pan-y;
 }
 
 .item-checkbox:checked {
@@ -372,6 +371,7 @@ input[type="url"]:focus {
     flex: 1;
     font-weight: 500;
     cursor: pointer;
+    touch-action: pan-y;
 }
 
 .item-content {
@@ -392,12 +392,14 @@ input[type="url"]:focus {
 .item-description {
     padding: var(--space-1) var(--space--1) 0 var(--space--1);
     color: var(--primary);
+    touch-action: pan-y;
 }
 
 .item-meta {
     font-family: var(--mono);
     font-size: var(--label);
     color: var(--accent);
+    touch-action: pan-y;
 }
 
 .item-actions {
@@ -405,6 +407,7 @@ input[type="url"]:focus {
     flex-wrap: wrap;
     gap: 1rem;
     padding: var(--space-0) var(--space--1) var(--space-1);
+    touch-action: pan-y;
 }
 
 button.batch-delete {
