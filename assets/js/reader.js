@@ -1041,11 +1041,11 @@ function renderItemList(containerId, items, isArchive, isFavorites) {
     
     // Add event listeners for item title/meta clicks (toggle expand/collapse)
     container.querySelectorAll('[data-toggle-id]').forEach(element => {
-        element.addEventListener('click', function(e) {
+        element.addEventListener('click', function() {
             const toggleId = this.dataset.toggleId;
             const isArchive = this.dataset.isArchive === 'true';
             toggleItem(toggleId, isArchive);
-        }, { passive: true });
+        });
     });
     
     // Update checkbox states to match current selection
