@@ -1,11 +1,11 @@
 # Supabase Sync Setup
 
-This guide will help you set up Supabase to sync your favorites and archived items across devices.
+This guide will help you set up Supabase to sync your favorites and archived items (or whatever views you've added) across devices.
 
-## Prerequisites
+## What You Need
 
-- A Supabase account (free tier is sufficient)
-- Your Feedomatic app running
+- A free Supabase account
+- The Feedomatic App
 
 ## Step 1: Create a Supabase Account
 
@@ -17,16 +17,16 @@ This guide will help you set up Supabase to sync your favorites and archived ite
 
 1. Click "New Project"
 2. Fill in:
-   - **Name**: `feedomatic` (or any name you prefer)
-   - **Database Password**: Create a strong password (save it somewhere safe)
-   - **Region**: Choose the closest region to you
-3. Click "Create new project" and wait ~2 minutes for it to initialize
+   - **Name**: `feedomatic` (or whatever you name the app)
+   - **Database Password**: Create a password.
+   - **Region**: Set your region.
+3. Click "Create new project" and wait for it to initialize
 
 ## Step 3: Create the Database Table
 
 1. In your Supabase project, click **"SQL Editor"** in the left sidebar
 2. Click **"New query"**
-3. Paste this SQL code:
+3. Paste the following SQL code:
 
 ```sql
 -- Create the user_data table
@@ -45,24 +45,24 @@ CREATE INDEX idx_user_data_type ON user_data(user_id, data_type);
 ```
 
 4. Click **"Run"** to execute the query
-5. You should see "Success. No rows returned"
+5. If everything's ok, you'll see: "Success. No rows returned"
 
 ## Step 4: Get Your API Credentials
 
-1. In your Supabase project, click **"Settings"** (gear icon) in the left sidebar
+1. In your Supabase project, click **"Settings"** (gear icon, left sidebar)
 2. Click **"API"** under Project Settings
-3. You'll need two values:
+3. You'll need these two values:
    - **Project URL**: Under "Project URL" (looks like `https://xxxxxxxxxxxxx.supabase.co`)
    - **anon public key**: Under "Project API keys" → "anon public" (long string starting with `eyJ...`)
 
-## Step 5: Configure Feedomatic
+## Step 5: Configure App
 
-1. Open your Feedomatic app in your browser
+1. Open app in your browser
 2. Open the browser's Developer Console:
    - **Chrome/Edge**: Press `F12` or `Cmd+Option+J` (Mac) / `Ctrl+Shift+J` (Windows)
    - **Firefox**: Press `F12` or `Cmd+Option+K` (Mac) / `Ctrl+Shift+K` (Windows)
    - **Safari**: Press `Cmd+Option+C` (Mac)
-3. In the console, paste this command (replace the values with your actual credentials):
+3. In the console, paste this command. (Replace the placeholder values with your credentials. Your unique ID is your supabase username/email.):
 
 ```javascript
 localStorage.setItem('rss_supabase_config', JSON.stringify({
@@ -71,11 +71,6 @@ localStorage.setItem('rss_supabase_config', JSON.stringify({
   userId: 'YOUR_UNIQUE_ID'
 }));
 ```
-
-**Important**: Replace:
-- `YOUR_PROJECT_URL` with your Project URL from Step 4
-- `YOUR_ANON_KEY` with your anon public key from Step 4  
-- `YOUR_UNIQUE_ID` with a unique identifier (e.g., your email, username, or any unique string)
 
 Example:
 ```javascript
@@ -86,16 +81,16 @@ localStorage.setItem('rss_supabase_config', JSON.stringify({
 }));
 ```
 
-4. Press Enter to execute
-5. **Reload the page** (press `F5` or `Cmd+R` / `Ctrl+R`)
+1. Press Enter to execute
+2. **Reload the page**
 
 ## Step 6: Test the Sync
 
 1. Add a favorite or archive an item
-2. Open Feedomatic on your second device (phone, tablet, etc.)
+2. Open app on your second device (phone, tablet, etc.)
 3. Repeat Step 5 on the second device using the **same credentials and userId**
 4. Reload the page
-5. Your favorites and archived items should now appear!
+5. Your favorites and archived items should now appear.
 
 ## How It Works
 
@@ -126,7 +121,7 @@ Then reload the page.
 ## Security Notes
 
 - The `anon public` key is safe to use in client-side code
-- Data is specific to your `userId` - use a unique one
+- Data is specific to your `userId` so use a unique one
 - For better security, you could add Row Level Security (RLS) policies in Supabase (advanced)
 - Never share your Database Password or service_role key
 
@@ -137,5 +132,3 @@ Supabase free tier includes:
 - 2GB file storage  
 - Unlimited API requests
 - 50,000 monthly active users
-
-More than enough for personal use!
