@@ -966,13 +966,15 @@ function renderItemList(containerId, items, isArchive, isFavorites) {
                     <div class="item-inner">
                         <div class="item-description">${escapeHtml(item.description)}</div>
                         <div class="item-actions">
-                            <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Full Article</a>
+                            <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Article</a>
                             ${isArchive ? 
                                 `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>
-                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Remove from Favorites' : 'Add to Favorites'}</button>
+                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Unfavorite' : 'Add to Favorites'}</button>
                                 <button class="delete-button" data-item-id="${encodedId}" data-action="delete">Delete</button>` :
+                                isFavorites ?
+                                `<button class="favorite-button" data-item-id="${encodedId}">Mark as New</button>` :
                                 `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>
-                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Remove from Favorites' : 'Add to Favorites'}</button>`
+                                <button class="favorite-button" data-item-id="${encodedId}">Add to Favorites</button>`
                             }
                         </div>
                     </div>

@@ -149,7 +149,14 @@ button:disabled {
 
 .controls button,
 .item-actions button {
+    min-width: 100px;
+    max-width: 100%;
+}
+
+.view button,
+.view .button-link {
     min-width: 130px;
+    max-width: 100%;
 }
 
 hr {
@@ -407,6 +414,7 @@ button.batch-delete {
     font-family: 'Geist';
     font-size: var(--label);
     line-height: 1.4;
+    text-align: center;
     text-decoration: none;
     color: var(--primary);
     background-color: var(--surface-background);
