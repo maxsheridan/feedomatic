@@ -316,6 +316,10 @@ input[type="url"]:focus {
     overflow: hidden;
 }
 
+.item * {
+    touch-action: pan-y;
+}
+
 .item + .item {
     margin-block-start: var(--space--3);
 }
