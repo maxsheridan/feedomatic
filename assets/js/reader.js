@@ -627,7 +627,7 @@ function selectFeed(feedUrl) {
 function showStatus(message, isError, persist = false) {
     const status = document.getElementById('feedStatus');
     status.textContent = message;
-    status.className = isError ? 'error' : 'loading';
+    status.className = isError ? 'error' : 'status';
     
     if (!persist) {
         setTimeout(() => {
@@ -706,6 +706,15 @@ function markAsUnread(itemId) {
     if (item) item.read = false;
     
     renderItems();
+}
+
+function copyLinkToClipboard(link) {
+    navigator.clipboard.writeText(link).then(() => {
+        alert('Link copied to clipboard');
+    }).catch(err => {
+        console.error('Failed to copy link:', err);
+        alert('Failed to copy link');
+    });
 }
 
 async function deleteItem(itemId) {
@@ -969,12 +978,12 @@ function renderItemList(containerId, items, isArchive, isFavorites) {
                             <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer" class="button-link">Read Article</a>
                             ${isArchive ? 
                                 `<button class="mark-button" data-item-id="${encodedId}" data-action="unread">Mark as New</button>
-                                <button class="favorite-button" data-item-id="${encodedId}">${isFavorited ? 'Unfavorite' : 'Add to Favorites'}</button>
                                 <button class="delete-button" data-item-id="${encodedId}" data-action="delete">Delete</button>` :
                                 isFavorites ?
-                                `<button class="favorite-button" data-item-id="${encodedId}">Mark as New</button>` :
+                                `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Archive Article</button>` :
                                 `<button class="mark-button" data-item-id="${encodedId}" data-action="read">Mark as Read</button>
-                                <button class="favorite-button" data-item-id="${encodedId}">Add to Favorites</button>`
+                                <button class="favorite-button" data-item-id="${encodedId}">Add to Favorites</button>
+                                <button class="copy-link-button" data-item-link="${item.link}">Copy Link</button>`
                             }
                         </div>
                     </div>
@@ -1011,6 +1020,14 @@ function renderItemList(containerId, items, isArchive, isFavorites) {
         button.addEventListener('click', function() {
             const itemId = decodeURIComponent(this.dataset.itemId);
             toggleFavorite(itemId);
+        });
+    });
+    
+    // Add event listeners for copy link buttons
+    container.querySelectorAll('.copy-link-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const link = this.dataset.itemLink;
+            copyLinkToClipboard(link);
         });
     });
     
