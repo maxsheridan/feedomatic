@@ -84,8 +84,23 @@ body {
     background-color: var(--background);
 }
 
+header {
+    display: flex;
+    position: sticky;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+}
+
 svg.site-title {
-    margin-block-end: -.5rem; /* Removes extra space */
+    max-width: 800px;
+    height: auto;
+    transform-origin: center var(--space-0);
+    transition: transform 0.3s ease;
+}
+
+body.scrolled svg.site-title {
+    transform: scale(0.4);
 }
 
 section + section {
