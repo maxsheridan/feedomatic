@@ -47,7 +47,7 @@
         --logo-shade: #FFDC00;
         --logo-fill: #591D73;
         --border: #505050;
-        --background: rgb(26, 26, 26);
+        --background: 26, 26, 26;
         --surface-background: #2A2A2A;
         --error: #EF8787;
         --error-reverse: #591D73; 
@@ -106,18 +106,19 @@ svg.site-title {
     display: block;
     width: 100%;
     height: auto;
-    padding: var(--space--1) var(--space-1);
+    padding: var(--space-2) var(--space-1) 0;
     transition: all 0.3s ease;
 }
 
 body.scrolled svg.site-title {
     width: 50%;
+    padding: var(--space-0) var(--space-1);
 }
 
 main {
     max-width: 800px;
     margin: 0 auto;
-    padding: 0 1.5rem var(--space-2);
+    padding: 0 var(--space-1) var(--space-2);
 }
 
 section + section {
