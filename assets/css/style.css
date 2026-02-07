@@ -111,8 +111,8 @@ svg.site-title {
 }
 
 body.scrolled svg.site-title {
-    width: 50%;
-    padding: var(--space-0) var(--space-1);
+    width: 40%;
+    padding: var(--space--1) var(--space-1);
 }
 
 main {
