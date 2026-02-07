@@ -34,7 +34,7 @@
     --logo-shade: #591D73;
     --logo-fill: #FFDC00;
     --border: #D0D0D0;
-    --background: #EAE8E8;
+    --background: 234, 232, 232;
     --surface-background: #F5F5F5;
     --error: #AF1919;
     --error-reverse: #FFDC00; 
@@ -47,7 +47,7 @@
         --logo-shade: #FFDC00;
         --logo-fill: #591D73;
         --border: #505050;
-        --background: #1A1A1A;
+        --background: rgb(26, 26, 26);
         --surface-background: #2A2A2A;
         --error: #EF8787;
         --error-reverse: #591D73; 
@@ -74,36 +74,50 @@ html:focus-within {
 }
 
 body {
-    padding: var(--space-2) 1rem;
     font-family: var(--body);
     font-weight: 425;
     line-height: 1.6;
     color: var(--primary);
-    background-color: var(--background);
+    background-color: rgb(var(--background));
 }
 
 header {
     display: flex;
-    position: sticky;
     justify-content: center;
+    position: sticky;
     top: 0;
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header::before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(var(--background),.8);
+    content: "";
 }
 
 svg.site-title {
-    max-width: 800px;
+    display: block;
+    width: 100%;
     height: auto;
-    transform-origin: center var(--space-0);
-    transition: transform 0.3s ease;
+    padding: var(--space--1) var(--space-1);
+    transition: all 0.3s ease;
 }
 
 body.scrolled svg.site-title {
-    transform: scale(0.4);
+    width: 50%;
 }
 
 main {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 1.5rem var(--space-2);
 }
 
 section + section {
@@ -144,7 +158,7 @@ button {
 }
 
 button.active {
-    color: var(--background);
+    color: rgb(var(--background));
     background-color: var(--accent);
 }
 
@@ -221,7 +235,7 @@ form > div * + * {
     border-radius: var(--radius);
     font-size: var(--label);
     color: var(--primary);
-    background-color: var(--background);
+    background-color: rgb(var(--background));
 }
 
 .add-feed .controls {
