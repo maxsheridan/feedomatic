@@ -6,6 +6,7 @@ const FAVORITES_KEY = 'rss_favorites';
 const DELETED_ITEMS_KEY = 'rss_deleted_items';
 const COLLAPSED_SECTIONS_KEY = 'rss_collapsed_sections';
 const ARCHIVED_PATH = 'data/archived.json';
+const USER_STATE_PATH = 'data/user-state.json';
 
 // GitHub config
 let githubConfig = null;
@@ -70,6 +71,29 @@ function getDeletedItems() {
 
 function saveDeletedItems(deletedItems) {
     localStorage.setItem(DELETED_ITEMS_KEY, JSON.stringify([...deletedItems]));
+}
+
+async function bootstrapLocalState() {
+    if (localStorage.getItem(FAVORITES_KEY) ||
+        localStorage.getItem(READ_ITEMS_KEY) ||
+        localStorage.getItem(DELETED_ITEMS_KEY)) return;
+
+    try {
+        const response = await fetch(`${USER_STATE_PATH}?${Date.now()}`);
+        if (!response.ok) return;
+        const state = await response.json();
+        if (Array.isArray(state.favorites)) {
+            localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favorites));
+        }
+        if (Array.isArray(state.archived)) {
+            localStorage.setItem(READ_ITEMS_KEY, JSON.stringify(state.archived));
+        }
+        if (Array.isArray(state.deleted)) {
+            localStorage.setItem(DELETED_ITEMS_KEY, JSON.stringify(state.deleted));
+        }
+    } catch (error) {
+        console.error('Failed to bootstrap local reader state:', error);
+    }
 }
 
 function exportLocalBackup() {
@@ -298,6 +322,7 @@ function updateSetupUI(isEditing) {
 // Load data from GitHub
 async function loadData() {
     try {
+        await bootstrapLocalState();
         let archivedItems = null;
         if (!localStorage.getItem(READ_ITEMS_KEY)) {
             try {
