@@ -6886,5 +6886,13 @@
     "description": "Gordon Mclean, a father, a husband, a feminist, an old school blogger, a geek, a cyclist, and another Apple consumer yelling at multi-trillion-dollar company: It's MY iPAD, let me delete stuff! Dear Sir, becaue you paid for the iPad, it does not give you the permission to do whatever you wish on it. You can do what Apple allows you. For \"geek\" it should be obvious. You did not pay for the hardware. You pay for a privilege to run today, what Apple decided yesterday....",
     "pubDate": "2026-09-08T14:56:10.000Z",
     "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://unstory.eu/cmz/",
+    "title": "Links, URLs and garbage",
+    "link": "https://unstory.eu/cmz/",
+    "description": "Almost every website today use links. In bloated and ugly way. Domain name is long, link is longer than a spaghetti and all this is hidden behind the cool label. SEO URLs, a relic of early 2000s search engine algorithms. People optimized their URLs for machines and made them terrible for humans. Then hide that junk behind the anchor text....",
+    "pubDate": "2026-09-09T10:21:08.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
   }
 ]
