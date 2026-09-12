@@ -6894,5 +6894,37 @@
     "description": "Almost every website today use links. In bloated and ugly way. Domain name is long, link is longer than a spaghetti and all this is hidden behind the cool label. SEO URLs, a relic of early 2000s search engine algorithms. People optimized their URLs for machines and made them terrible for humans. Then hide that junk behind the anchor text....",
     "pubDate": "2026-09-09T10:21:08.000Z",
     "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://piccalil.li/the-index/197/",
+    "title": "The Index: Issue #197",
+    "link": "https://piccalil.li/the-index/197/",
+    "description": "",
+    "pubDate": "2026-09-11T00:00:00.000Z",
+    "feedUrl": "https://piccalil.li/the-index/feed.xml"
+  },
+  {
+    "id": "https://unstory.eu/vtg/",
+    "title": "Idiots",
+    "link": "https://unstory.eu/vtg/",
+    "description": "In a previous article I wrote about con men. Business owners or artificial authorities who play experts. They try to trick you for simple reasons such as money, popularity, status, power. They often confirm their expertise with each other. It's visible and easy to spot. However, not everyone has their own business or real power. Some people have ideologies. Never unique, never their own. It can be some political view, religion, ecology, economy, or whatever. It's not invented by them....",
+    "pubDate": "2026-09-11T23:49:38.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://unstory.eu/akw/",
+    "title": "The incentive to lie",
+    "link": "https://unstory.eu/akw/",
+    "description": "A person can have enormous authority because he is popular, credentialed, wealthy, or repeatedly featured by platforms, while having relatively weak incentives to tell you what is actually true. An independent person has no particular reason to tell you that you need an iPhone, a Mac, Google Drive, a subscription, or the newest version of something. That's the difference between authority and independence. Popularity is often mistaken for evidence. Popular figures monetize their audience....",
+    "pubDate": "2026-09-11T22:27:57.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://unstory.eu/bum/",
+    "title": "Lunatic loves ads",
+    "link": "https://unstory.eu/bum/",
+    "description": "Apple hallucination is back https://daringfireball.net/linked/2026/09/11/xcancel-is-back Look at this nice spaghetti URL ;/ I think Zhenyi Tan's Litterbox Safari extension is a much better solution for viewing tweets on X without going to X. Sir, you probably never tried browsing the web with Firefox + uBlock Origin. Recommending Safari browser with some extension to browse a corporate walled website can recommend only ad enthusiast or somebody who got paid for telling that....",
+    "pubDate": "2026-09-11T21:15:08.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
   }
 ]
