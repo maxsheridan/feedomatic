@@ -7038,5 +7038,21 @@
     "description": "",
     "pubDate": "2026-09-23T21:29:59.000Z",
     "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://unstory.eu/npp/",
+    "title": "What is a text?",
+    "link": "https://unstory.eu/npp/",
+    "description": "https://www.simplermachines.com/what-is-a-text/ Could be written just on toilet paper.",
+    "pubDate": "2026-09-24T23:30:24.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
+  },
+  {
+    "id": "https://unstory.eu/ids/",
+    "title": "Free clown",
+    "link": "https://unstory.eu/ids/",
+    "description": "This whole circus at unstory.eu has been running for over three months. I had a website before. Maybe five people read it. This shit is read by maybe 500. It changes nothing. There is nothing to sell here. No service, no product, no subscription, no ideology, no data, no audience to convert into money. So what exactly am I doing? Playing a clown for free. There are practically two ways to exist online. You extract something from other people, or other people extract something from you. Money....",
+    "pubDate": "2026-09-24T15:20:59.000Z",
+    "feedUrl": "https://unstory.eu/feed.json"
   }
 ]
